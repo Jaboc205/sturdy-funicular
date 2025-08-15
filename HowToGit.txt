@@ -1,0 +1,12 @@
+Beginner instructions on how to use git
+
+Open Git
+cd into the correct folder
+git init //if new project
+git add . //saves all files to git?
+git commit -m 'your changes to this commit' //saves to memory?
+git log //shows the times we saved. You can use the hash to recover these files
+git checkout <hash from commit logs> //lets you work on a previous version that you committed
+git remote add origin <github url> //links this to GitHub
+git pull origin master //pull from GitHub
+git push -u origin main //pushes to Github
