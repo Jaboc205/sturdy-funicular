@@ -1,0 +1,14 @@
+
+
+.calculator{
+  display: grid;
+  place-items: center; /* centers both horizontally and vertically */
+  height: 100vh;
+}
+
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
