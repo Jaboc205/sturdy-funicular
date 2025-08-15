@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .sidebar a {
+            color: white;
+            display: block;
+            margin: 0.5rem 0;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+        .nav-links {
+            list-style-type: none;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline;
+            margin-right: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .nav-footer {
+            margin-top: auto;
+            padding: 10px 0;
+            border-top: 1px solid #444;
+        }
+        .content {
+            padding: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    alert(`You clicked on ${this.textContent}`);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
-    
+    <div class="container">
+    <nav class="sidebar">
+        <div class="nav-header">
+            <h1>Page Name</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Dashboard 01</a></li>
+            <li><a href="#about">Dashboard 02</a></li>
+            <li><a href="#services">Dashboard 03</a></li>
+            <li><a href="#contact">Dashboard 04</a></li>
+        </ul>
+        <div class="nav-footer">
+            <p>Settings</p>
+        </div>
+    </nav>
+        <main class="content">
+            <h2>Welcome to Our Website</h2>
+            <p>This is a simple navigation layout example.</p>
+        </main>
+    </div>    
 </body>
 </html>
