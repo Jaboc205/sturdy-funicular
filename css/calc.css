@@ -1,14 +1,20 @@
 
 
 .calculator{
-  display: grid;
-  place-items: center; /* centers both horizontally and vertically */
-  height: 100vh;
+  height: 80vh;
+  width: 60vh;
+}
+
+.display{
+  width: 50vh;
+  padding: 5vh;
 }
 
 .buttons{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  height: 100%;
+  width: 100%;
 }
 
