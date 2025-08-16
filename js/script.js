@@ -1,13 +1,13 @@
-function beginnerProjectsDrop(){
-    document.getElementById("beginner-dropdown").innerHTML = `
-            <div id="beginner-dropdown">
-                <li><a href="calc.html" >Calculator</a></li>
-            </div>`;
-    console.log("beginnerProjectsDrop()");
-};
+function toggleDropdown(menuId, arrowId) {
+      const menu = document.getElementById(menuId);
+      const arrow = document.getElementById(arrowId);
 
-function beginnerProjectsLift(){
-    document.getElementById("beginner-projects").innerHTML = `
-        <li><button id=\"beginnerProjects\" onclick=\"beginnerProjectsDrop()\">Beginner Projects></button></li>
-    console.log("beginnerProjectsLift()")`;
-};
+      menu.classList.toggle("show");
+      arrow.classList.toggle("down");
+    }
+
+const body = document.body;
+function toggleDarkMode() {
+  body.classList.toggle('dark-mode');
+  console.log('Dark mode toggled');
+}

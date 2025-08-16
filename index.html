@@ -1,32 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <nav class="sidebar">
-          <div class="nav-header">
-              <h1>Home Page</h1>
-          </div>
-          <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><button class="menu-dropdown" id="beginner-projects" onclick="beginnerProjectsDrop()">Beginner Projects></button></li>
-              <li><a href="">Content 03</a></li>
-              <li><a href="">Content 04</a></li>
+  <div class="container">
+    <nav class="sidebar">
+
+      <div class="nav-header">
+        <h1>Home Page</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- Dropdown -->
+        <li>
+          <button class="menu-dropdown" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
+            Beginner Projects <span id="arrow1" class="arrow">▸</span>
+          </button>
+          <ul class="submenu" id="beginner-dropdown">
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a href="#">Another Project</a></li>
           </ul>
-          <div class="nav-footer">
-              <p>Settings</p>
-          </div>
-      </nav>
-      <main class="content">
-          <h2>Welcome to Our Website</h2>
-          <p>This is a simple navigation layout example.</p>
-      </main>
-    </div>    
+        </li>
+        <li><a href="#">Content 03</a></li>
+        <li><a href="#">Content 04</a></li>
+      </ul>
+
+      <div class="nav-footer">
+        <button onclick="toggleDarkMode()">Settings</button>
+      </div>
+
+    </nav>
+    <main class="content">
+      <h2>Welcome to Our Website</h2>
+      <p>This is a simple navigation layout example.</p>
+    </main>
+  </div>    
 </body>
 </html>
