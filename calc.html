@@ -74,12 +74,12 @@
           <button class="key" onclick="addToCalc(1)">1</button>
           <button class="key" onclick="addToCalc(2)">2</button>
           <button class="key" onclick="addToCalc(3)">3</button>
-          <button class="key op" data-op="plus" aria-label="Add">+</button>
+          <button class="key op" onclick="operator('+')" aria-label="Add">+</button>
 
           <!-- bottom row -->
           <button class="key span-2" onclick="addToCalc(0)" aria-label="Zero">0</button>
           <button class="key" data-action="decimal" aria-label="Decimal">.</button>
-          <button class="key equals span-2-tall" data-action="equals" aria-label="Equals">=</button>
+          <button class="key equals span-2-tall" onclick="equalsCalc()" aria-label="Equals">=</button>
         </div>
       </div>
       <div class="calc-history">
