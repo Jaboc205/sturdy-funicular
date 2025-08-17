@@ -12,6 +12,7 @@ body {
     height: 100vh;
     width: 100%;
     background-color: var(--bg-color);
+    color: var(--font-color)
 }
 
 body.dark-mode {
@@ -35,16 +36,22 @@ button, input[type="submit"], input[type="reset"] {
 }
 .sidebar {
     width: 20vh;
+    min-width: 20vh;
     background-color: var(--nav-bg-color);
     color: var(--nav-font-color);
     display: flex;
     flex-direction: column;
     padding: 20px;
 }
+
 .sidebar a {
-    /* color: white; */
     display: block;
     margin: 0.5rem 0;
+}
+
+.nav-links a.active {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .menu-dropdown {
@@ -74,6 +81,10 @@ display: block;
   transform: scaleY(1) translateY(0);
   opacity: 1;
   height: auto;
+}
+
+.menu-dropdown:hover {
+  text-decoration: underline;
 }
 
 .arrow {
@@ -115,3 +126,223 @@ display: block;
 .content {
     padding: 20px;
 }
+
+/* Toggle Switch CSS */
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between toggle and text */
+}
+
+.switch-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  font-size: 3vh;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:hover:before {
+  background-color: #303030;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* CALC CONTENT */
+    .calc-page {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      width: 100vw;
+    }
+
+    .calc{
+      width: min(700px, 92vw);
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: clip;
+      border: 1px solid rgba(255,255,255,.06);
+    }
+
+    /* ---------- Display ---------- */
+    .display{
+      padding: 18px 18px 10px;
+      display: grid;
+      gap: 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.06));
+    }
+    .display .mini{
+      min-height: 22px;
+      color: var(--muted);
+      text-align: right;
+      font-size: 0.95rem;
+      letter-spacing: .4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .display .main{
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      font-weight: 700;
+      line-height: 1.1;
+      font-size: clamp(1.8rem, 4.2vw + 1rem, 3rem);
+      word-break: break-all;
+      min-height: 48px;
+    }
+
+    /* ---------- Keypad ---------- */
+    .keys{
+      padding: 14px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    button.key{
+      appearance: none;
+      height: 100px;
+      width: 100%;
+      border: 0;
+      border-radius: 14px;
+      padding: 16px 12px;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      cursor: pointer;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.04) inset,
+        0 8px 16px rgba(0,0,0,.18);
+      transform: translateY(0);
+      transition: transform .06s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
+      user-select: none;
+    }
+    button.key:active{
+      transform: translateY(1px);
+      box-shadow:
+        0 0 0 rgba(255,255,255,0) inset,
+        0 4px 10px rgba(0,0,0,.18);
+    }
+    button.key:focus-visible{
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    /* Muted utility keys */
+    .key.muted{
+      color: var(--muted);
+    }
+
+    /* Operator keys */
+    .key.op{
+      background: linear-gradient(180deg, rgba(91,155,255,.18), rgba(91,155,255,.10));
+    }
+    .key.op:active{ background: linear-gradient(180deg, rgba(91,155,255,.24), rgba(91,155,255,.12)); }
+
+    /* Accent actions (equals) */
+    .key.equals{
+      background: linear-gradient(180deg, var(--primary), var(--primary-press));
+      color: white;
+      box-shadow:
+        0 1px 0 rgba(255,255,255,.18) inset,
+        0 10px 20px rgba(59,126,242,.35);
+    }
+
+    /* Danger (clear) */
+    .key.danger{
+      background: linear-gradient(180deg, rgba(255,107,107,.18), rgba(255,107,107,.10));
+      color: #ffdfe0;
+    }
+
+    /* Make 0 key wider; = key tall */
+    .key.span-2{ grid-column: span 2; }
+    .key.span-2-tall{ grid-row: span 2; }
+
+    /* Footer / credits (optional) */
+
+    /* CALC HISTORY */
+    .calc-history {
+      padding: 12px 18px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.06));
+      width: 100%;
+    }
+    .calc-history h3 {
+      margin: 0 0 8px;
+      font-size: 1.8rem;
+      font-weight: 600;
+      width: 100%;
+    }
+    .calc-history ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .calc-history li {
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+

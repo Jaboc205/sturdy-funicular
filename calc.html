@@ -1,57 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="css/calc.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="container">
-      <nav class="sidebar">
-          <div class="nav-header">
-              <h1>Calculator</h1>
-          </div>
-          <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><button id="beginnerProjects" onclick="beginnerProjects()">Beginner Projects</button></li>
-              <li><a href="">Content 03</a></li>
-              <li><a href="">Content 04</a></li>
+  <div class="container">
+    <nav class="sidebar">
+
+      <div class="nav-header">
+        <h1>Calculator</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <!-- Dropdown -->
+        <li>
+          <button class="menu-dropdown" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
+            Beginner Projects <span id="arrow1" class="arrow down">▸</span>
+          </button>
+          <ul class="submenu show" id="beginner-dropdown">
+            <li><a class="active" href="calc.html">Calculator</a></li>
+            <li><a href="#">Another Project</a></li>
           </ul>
-          <div class="nav-footer">
-              <p>Settings</p>
-          </div>
-      </nav>
-          <main>
-            <div class="container">
-              <div class="calculator">
-                <input type="text" class="display" id="display" disabled>
-                <div class="buttons">
-                    <button onclick="">&larr;</button>
-                    <button onclick="">C</button>
-                    <button onclick="">%</button>
-                    <button onclick="">&div;</button>
-                    <button onclick="">7</button>
-                    <button onclick="">8</button>
-                    <button onclick="">9</button>
-                    <button onclick="">x</button>
-                    <button onclick="">4</button>
-                    <button onclick="">5</button>
-                    <button onclick="">6</button>
-                    <button onclick="">-</button>
-                    <button onclick="">1</button>
-                    <button onclick="">2</button>
-                    <button onclick="">3</button>
-                    <button onclick="">+</button>
-                    <button onclick="">&pm;</button>
-                    <button onclick="">0</button>
-                    <button onclick="">.</button>
-                    <button onclick="">=</button>
-                </div>
-              </div>
-            </div>
-        </main>
-    </div>    
+        </li>
+        <li><a href="#">Content 03</a></li>
+        <li><a href="#">Content 04</a></li>
+      </ul>
+
+      <div class="nav-footer">
+        <div class="switch-container">
+          <label class="switch">
+            <input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()">
+            <span class="slider round"></span>
+          </label>
+          <span id ="switch-label" class="switch-label">:)</span>
+        </div>
+      </div>
+
+    </nav>
+    <div class="calc-page"> 
+      <div class="calc" role="application" aria-label="Calculator">
+        <!-- Screen -->
+        <div class="display">
+          <!-- Secondary line: previous value / operation -->
+          <div class="mini" id="mini-display" aria-live="polite"></div>
+          <!-- Primary line: current entry/result -->
+          <div class="main" id="main-display" aria-live="polite">0</div>
+        </div>
+
+        <!-- Keys -->
+        <div class="keys" aria-label="Calculator keys">
+          <!-- top row -->
+          <button class="key danger" onclick="clearCalc()" aria-label="Clear">AC</button>
+          <button class="key muted" data-action="sign" aria-label="Toggle sign">±</button>
+          <button class="key muted" data-action="percent" aria-label="Percent">%</button>
+          <button class="key op" data-op="divide" aria-label="Divide">÷</button>
+
+          <!-- numbers & ops -->
+          <button class="key" onclick="addToCalc(7)">7</button>
+          <button class="key" onclick="addToCalc(8)">8</button>
+          <button class="key" onclick="addToCalc(9)">9</button>
+          <button class="key op" data-op="multiply" aria-label="Multiply">×</button>
+
+          <button class="key" onclick="addToCalc(4)">4</button>
+          <button class="key" onclick="addToCalc(5)">5</button>
+          <button class="key" onclick="addToCalc(6)">6</button>
+          <button class="key op" data-op="minus" aria-label="Subtract">−</button>
+
+          <button class="key" onclick="addToCalc(1)">1</button>
+          <button class="key" onclick="addToCalc(2)">2</button>
+          <button class="key" onclick="addToCalc(3)">3</button>
+          <button class="key op" data-op="plus" aria-label="Add">+</button>
+
+          <!-- bottom row -->
+          <button class="key span-2" onclick="addToCalc(0)" aria-label="Zero">0</button>
+          <button class="key" data-action="decimal" aria-label="Decimal">.</button>
+          <button class="key equals span-2-tall" data-action="equals" aria-label="Equals">=</button>
+        </div>
+      </div>
+      <div class="calc-history">
+        <h3>History</h3>
+        <ul id="history-list">
+          <!-- History items will be dynamically added here -->
+        </ul>
+      </div>
+    </div>
+  </div>    
 </body>
 </html>

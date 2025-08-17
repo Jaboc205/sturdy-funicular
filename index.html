@@ -16,7 +16,7 @@
       </div>
 
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
         <!-- Dropdown -->
         <li>
           <button class="menu-dropdown" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
@@ -32,7 +32,13 @@
       </ul>
 
       <div class="nav-footer">
-        <button onclick="toggleDarkMode()">Settings</button>
+        <div class="switch-container">
+          <label class="switch">
+            <input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()">
+            <span class="slider round"></span>
+          </label>
+          <span id ="switch-label" class="switch-label">:)</span>
+        </div>
       </div>
 
     </nav>
