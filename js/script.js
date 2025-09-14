@@ -1,3 +1,5 @@
+// will come back to this
+
 // Document Functions
 function toggleDropdown(menuId, arrowId) {
       const menu = document.getElementById(menuId);
@@ -24,100 +26,198 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Calculator variables
+
 let firstValue = 0;
 let secondValue = 0;
 let operation = null;
+let usingHistory = false;
+let calculation = 0;
+let display = "0";
 
 
 // Calculator Functions
 function addToCalc(num) {
-  const existingNum = document.getElementById('main-display');
-  let updateNum = null;
-  if (operation == null) {
-    // add to first number
-    if (firstValue == 0) {
-      updateNum = `${num}`;
-      firstValue = updateNum;
-      existingNum.textContent = updateNum;
-    } else {
-      updateNum = `${firstValue}${num}`;
-      firstValue = updateNum;
-      existingNum.textContent = updateNum;
-    }
+  if (display == "0") {
+    // calculation = num;
+    display = String(num)
   } else {
-    if (secondValue == 0) {
-      updateNum = `${num}`;
-      secondValue = updateNum;
-      existingNum.textContent = updateNum;
-    } else {
-      updateNum = `${secondValue}${num}`;
-      secondValue = updateNum;
-      existingNum.textContent = updateNum;
-    }
-  }
-  
-  
-  console.log(`
-    updateNum: ${updateNum}
-    num1:  ${firstValue}
-    num2: ${secondValue}
-    OP:  ${operation}
-  `);
-
-  // if (operation == null) {
-  //   if (existingNum.textContent === "0") {
-  //   
-  //   storedValue = num;
+    // calculation += num;
+    display += String(num)
+  };
+  document.getElementById('main-display').textContent = display;
+  console.log(display);
+  // console.log(calculation);
+  // let updateNum = null;
+  // if (operation == null && usingHistory == false) {
+  //     // add to first number
+  //   if (firstValue == 0) {
+  //     updateNum = `${num}`;
+  //     firstValue = updateNum;
+  //     existingNum.textContent = updateNum;
   //   } else {
-  //   existingNum.textContent += num;
-  //   storedValue += num;
+  //     updateNum = `${firstValue}${num}`;
+  //     firstValue = updateNum;
+  //     existingNum.textContent = updateNum;
   //   }
-  // } else if (operationValue == 0) {
-  //   existingNum.textContent = num;
-  //   operationValue = num; 
   // } else {
-  //   existingNum.textContent += num;
-  //   operationValue += num; 
+  //   if (secondValue == 0) {
+  //     updateNum = `${num}`;
+  //     secondValue = updateNum;
+  //     existingNum.textContent += updateNum;
+  //   } else {
+  //     updateNum = `${secondValue}${num}`;
+  //     secondValue = updateNum;
+  //     existingNum.textContent = updateNum;
+  //   }
   // }
   
+  
+  // console.log(`
+  //   updateNum: ${updateNum}
+  //   num1:  ${firstValue}
+  //   num2: ${secondValue}
+  //   OP:  ${operation}
+  // `);  
 };
 
 function clearCalc() {
-  operation = null;
-  firstValue = 0;
-  secondValue = 0;
-  document.getElementById('main-display').textContent = 0;
-  console.log(`
-    num1:  ${firstValue}
-    num2: ${secondValue}
-    OP:  ${operation}  
-  `);
+  display = "0";
+  usingHistory = false;
+  document.getElementById('main-display').textContent = display;
+  // console.log(`
+  //   num1:  ${firstValue}
+  //   num2: ${secondValue}
+  //   OP:  ${operation}  
+  // `);
   console.log("Calculator cleared");
 };
 
-function operator(op) {
-  const display = document.getElementById('main-display');
-  display.textContent += ` ${op} `;
-  operation = op;
-  console.log(`
-    num1:  ${firstValue}
-    num2: ${secondValue}
-    OP:  ${operation}   
-  `);
-}
+// function operator(op) {
+//   const display = document.getElementById('main-display');
+//   if (secondValue == 0) {
+//     if (op == "/") {
+//       display.textContent += `÷`;
+//     } else {
+//       display.textContent += `${op}`;
+//     };
+//   } else {
+//     operatorCalc()
+//     if (op == "/") {
+//       display.textContent += `÷`;
+//     } else {
+//       display.textContent += `${op}`;
+//     };
+//   };
+  
+//   operation = op;
+//   console.log(`
+//     num1:  ${firstValue}
+//     num2: ${secondValue}
+//     OP:  ${operation}   
+//   `);
+// }
+
+// function operatorCalc() {
+//   console.log("operatorCalc");
+
+
+//   if (operation == "+") {
+//     sum = Number(firstValue) + Number(secondValue);
+//     operatorOutput(sum);
+    
+//   } else if (operation == "x") {
+//     sum =  Number(firstValue) * Number(secondValue);
+//     operatorOutput(sum);
+
+//   } else if (operation == "/") {
+//     sum =  Number(firstValue) / Number(secondValue);
+//     operatorOutput(sum);
+
+//   } else if (operation == "-") {
+//     sum =  Number(firstValue) - Number(secondValue);
+//     operatorOutput(sum);
+    
+//   } else if (operation == null) {
+//     console.log("OP == null");
+
+//   } else {
+//     console.log("001 An error has occured");
+//   };
+  
+//   // equalsOutput(sum)
+
+//   console.log(`
+//     num1:  ${firstValue}
+//     num2: ${secondValue}
+//     OP:  ${operation}
+//   `);
+// }
+
+// function operatorOutput(newValue) {
+//   // document.getElementById('main-display').textContent = sum;
+//   storedValue = newValue;
+//   firstValue = newValue;
+//   secondValue = 0;
+// }
 
 function equalsCalc() {
   console.log("equals");
-  if (operation == "+") {
-    console.log(firstValue + "=" + firstValue + "+" + secondValue);
-    sum =  Number(firstValue) + Number(secondValue);
-    document.getElementById('main-display').textContent = sum;
-    storedValue = sum
+
+  sum = Number(display);
+  console.log(sum);
+  // if (operation == "+") {
+  //   sum = Number(firstValue) + Number(secondValue);
+  //   equalsOutput(sum);
+    
+  // } else if (operation == "x") {
+  //   sum =  Number(firstValue) * Number(secondValue);
+  //   equalsOutput(sum);
+
+  // } else if (operation == "/") {
+  //   sum =  Number(firstValue) / Number(secondValue);
+  //   equalsOutput(sum);
+
+  // } else if (operation == "-") {
+  //   sum =  Number(firstValue) - Number(secondValue);
+  //   equalsOutput(sum);
+    
+  // } else if (operation == null) {
+  //   console.log("OP == null");
+
+  // } else {
+  //   console.log("001 An error has occured");
+  // };
+  
+  // equalsOutput(sum)
+
+  // console.log(`
+  //   num1:  ${firstValue}
+  //   num2: ${secondValue}
+  //   OP:  ${operation}
+  // `);
+}
+
+function equalsOutput(newValue) {
+  document.getElementById('main-display').textContent = sum;
+  storedValue = newValue;
+  firstValue = newValue;
+  secondValue = 0;
+}
+
+function plusMinus() {
+  const existingNum = document.getElementById('main-display');
+  if (operation == null) {
+    if (firstValue > 0 || firstValue < 0) {
+      firstValue = firstValue * -1
+      document.getElementById('main-display').textContent = firstValue;
+    }    
+  } else if (operation != null) {
+    if (secondValue > 0 || secondValue < 0) {
+      secondValue = secondValue * -1
+      document.getElementById('main-display').textContent = secondValue;
+    }    
+    // updateNum = `${num}`;
+    //   secondValue = updateNum;
+    //   existingNum.textContent += updateNum;
   }
-  console.log(`
-    num1:  ${firstValue}
-    num2: ${secondValue}
-    OP:  ${operation}
-    sum: ${sum}
-  `);
 }

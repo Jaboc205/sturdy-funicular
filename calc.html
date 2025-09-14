@@ -12,7 +12,8 @@
     <nav class="sidebar">
 
       <div class="nav-header">
-        <h1>Calculator</h1>
+        <h1>Theoretical</h1>
+        <h1>Hobbyist</h1>
       </div>
 
       <ul class="nav-links">
@@ -24,7 +25,7 @@
           </button>
           <ul class="submenu show" id="beginner-dropdown">
             <li><a class="active" href="calc.html">Calculator</a></li>
-            <li><a href="#">Another Project</a></li>
+            <li><a href="armstrong.html">Armstrong Numbers</a></li>
           </ul>
         </li>
         <li><a href="#">Content 03</a></li>
@@ -56,29 +57,29 @@
         <div class="keys" aria-label="Calculator keys">
           <!-- top row -->
           <button class="key danger" onclick="clearCalc()" aria-label="Clear">AC</button>
-          <button class="key muted" data-action="sign" aria-label="Toggle sign">±</button>
+          <button class="key muted" onclick="plusMinus()" aria-label="Toggle sign">±</button>
           <button class="key muted" data-action="percent" aria-label="Percent">%</button>
-          <button class="key op" data-op="divide" aria-label="Divide">÷</button>
+          <button class="key op" onclick="operator('/')" aria-label="Divide">÷</button>
 
           <!-- numbers & ops -->
           <button class="key" onclick="addToCalc(7)">7</button>
           <button class="key" onclick="addToCalc(8)">8</button>
           <button class="key" onclick="addToCalc(9)">9</button>
-          <button class="key op" data-op="multiply" aria-label="Multiply">×</button>
+          <button class="key op" onclick="addToCalc('x')" aria-label="Multiply">×</button>
 
           <button class="key" onclick="addToCalc(4)">4</button>
           <button class="key" onclick="addToCalc(5)">5</button>
           <button class="key" onclick="addToCalc(6)">6</button>
-          <button class="key op" data-op="minus" aria-label="Subtract">−</button>
+          <button class="key op" onclick="operator('-')" aria-label="Subtract">−</button>
 
           <button class="key" onclick="addToCalc(1)">1</button>
           <button class="key" onclick="addToCalc(2)">2</button>
           <button class="key" onclick="addToCalc(3)">3</button>
-          <button class="key op" onclick="operator('+')" aria-label="Add">+</button>
+          <button class="key op" onclick="addToCalc('+')" aria-label="Add">+</button>
 
           <!-- bottom row -->
           <button class="key span-2" onclick="addToCalc(0)" aria-label="Zero">0</button>
-          <button class="key" data-action="decimal" aria-label="Decimal">.</button>
+          <button class="key" onclick="" aria-label="Decimal">.</button>
           <button class="key equals span-2-tall" onclick="equalsCalc()" aria-label="Equals">=</button>
         </div>
       </div>
