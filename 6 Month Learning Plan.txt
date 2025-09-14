@@ -8,7 +8,7 @@ Month 1 – Foundations (HTML, CSS, JS basics) - September 2025
   Main Quest:
 ✅ Learn semantic HTML, CSS selectors, and simple JS (variables, functions, loops, events).
 ✅ Build a personal website with a navbar, multiple pages, and GitHub deployment.
-🔳 Practice commits: feature branch → merge into main.
+✅ Practice commits: feature branch → merge into main.
 
   Side Quests (optional projects):
 
