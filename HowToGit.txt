@@ -2,18 +2,17 @@ Beginner instructions on how to use git
 
 Open Git
 cd into the correct folder
-git init //if new project
-git add . //saves all new files to git
-git commit -m 'your changes to this commit' //saves to memory
-git log //shows the times we saved. You can use the hash to recover these files
-git checkout <hash from commit logs> //lets you work on a previous version that you committed
-git remote add origin <github url> //links this to GitHub
-git pull origin master //pull from GitHub
-git push -u origin main //pushes to Github
 
+1. Make sure repo is up to date. This ensures the local copy matches whats on Github 
+  1. git checkout main
+  2. git pill origin main 
 
-To save changes and push to git:
+2. Create a feature branch // Optional for if we want to have a split production branch and development branch
+  1. git checkout -b feature/<featureName> // -b == create new branch 'feature'/the sub branch
 
-1. git add . //saves all new files to git
-2. git commit -m 'your changes to this commit' //saves to memory
-3. git push -u origin main //pushes to Github
+3. Save and commit changes
+  1. git add . // . == all
+  2. git commit -m "notes on what changes are in this commit"
+
+4. Push the branch to github
+  1. git push -u origin <branch> eg main or feature/<featureName>
