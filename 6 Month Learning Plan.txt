@@ -1,0 +1,111 @@
+I am using GPT as a mentor. I have provided it with context to serve as a guide instead of simply providing all the answers. This is its suggestion for a six-month plan.
+
+<h1>6-Month Web Dev Roadmap (Personal Projects)</h1>
+
+<h2>Month 1 – Foundations (HTML, CSS, JS basics)</h2>
+
+<b>Main Quest:</b>
+
+Learn semantic HTML, CSS selectors, and simple JS (variables, functions, loops, events).
+
+Build a personal website with a navbar, multiple pages, and GitHub deployment.
+
+Practice commits: feature branch → merge into main.
+
+Side Quests (optional projects):
+
+🧮 Calculator (DOM manipulation + events).
+
+⏱️ Stopwatch / digital clock (practice setInterval).
+
+🎲 Random quote generator (arrays + randomness).
+
+Month 2 – DOM & Interactivity
+
+Main Quest:
+
+Add interactivity: forms, inputs, event listeners.
+
+Style your UI → experiment with dark mode toggle (store choice in localStorage).
+
+Make sure your layout is responsive (basic flexbox/grid).
+
+Side Quests:
+
+📝 Notes app (simple text + localStorage).
+
+🎨 Theme customizer (change font size, background, save settings).
+
+💰 Simple budget tracker (add/remove items, sum totals, persist in storage).
+
+Month 3 – Persistence & State Management
+
+Main Quest:
+
+Work on saving/retrieving user data (cookies & localStorage).
+
+Create a todo list app with priority levels (persist tasks).
+
+Learn basic UI best practices: spacing, alignment, readability.
+
+Side Quests:
+
+🌤️ Weather widget (fetch data from API).
+
+🔄 Unit converter (C↔F, km↔miles).
+
+⌨️ Keyboard shortcuts for your site (/ = focus search bar, etc.).
+
+Month 4 – APIs & Data Handling
+
+Main Quest:
+
+Learn how to fetch data from APIs using fetch + async/await.
+
+Expand IT-related tools (subnetting calculator, wire gauge tool).
+
+Clean up UI → reusable header/footer/navbar across pages.
+
+Side Quests:
+
+🧑‍💻 GitHub user finder (fetch user/repos via GitHub API).
+
+🎬 Movie search tool (OMDb API).
+
+💱 Currency converter (live exchange rates).
+
+Month 5 – UI/UX & Modular Design
+
+Main Quest:
+
+Refactor code → break JS into smaller functions.
+
+Add dark mode toggle with persistence.
+
+Polish your main UI → consistent design, spacing, and color choices.
+
+Side Quests:
+
+🌍 Weather dashboard (multiple cities, save favorites).
+
+🗂️ Kanban board (Trello-like, draggable tasks, persisted state).
+
+📝 Markdown notes app (render Markdown → HTML).
+
+Month 6 – Advanced Projects & Showcase
+
+Main Quest:
+
+Deploy polished version of your website (GitHub Pages or Netlify).
+
+Document your projects (README + screenshots).
+
+Try building a simple full app (combine UI, persistence, APIs).
+
+Side Quests (big boss fights 💪):
+
+🤖 Chatbot page (connect to LLM API like OpenAI).
+
+🛠️ Full Armstrong number generator/checker (tie back to your early learning).
+
+🎨 Portfolio polish → responsive design, animations, favicon, SEO basics.
