@@ -5,7 +5,7 @@ cd into the correct folder
 
 1. Make sure repo is up to date. This ensures the local copy matches whats on Github 
   1. git checkout main
-  2. git pill origin main 
+  2. git pull origin main 
 
 2. Create a feature branch // Optional for if we want to have a split production branch and development branch
   1. git checkout -b feature/<featureName> // -b == create new branch 'feature'/the sub branch
