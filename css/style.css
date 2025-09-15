@@ -1,8 +1,8 @@
 :root {
   --bg-color: #212121;
   --font-color: white;
-  --nav-bg-color: #181818;
-  --nav-font-color: white;
+  --content-button-color: #1e1e2f;
+  --content-button-border-color: #1e1e2f;
 }
 
 body {
@@ -18,6 +18,8 @@ body {
 body.dark-mode {
   --bg-color: white;
   --font-color: black;
+  --content-button-color: #5e63be;
+  --content-button-border-color: #5e63be;
 }
 
 button, input[type="submit"], input[type="reset"] {
@@ -34,106 +36,20 @@ button, input[type="submit"], input[type="reset"] {
     display: flex;
     height: 100%;
 }
-.sidebar {
-    width: 20vh;
-    min-width: 20vh;
-    background-color: var(--nav-bg-color);
-    color: var(--nav-font-color);
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.nav-header h1 {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.sidebar a {
-    display: block;
-    margin: 0.5rem 0;
-}
-
-.nav-links a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.menu-dropdown {
-    /* color: white; */
-    display: block;
-    /* margin: 0.5rem 0; */
-}
-
-.submenu {
-  padding-inline-start: 20px;
-  transform: scaleY(0);
-  transform-origin: top;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
-  height: 0;
-  overflow: hidden;
-}
-
-.submenu li a {
-display: block;
-
-}
-
-.submenu.show {
-  margin-bottom: 10%;
-  padding-inline-start: 20px;
-  transform: scaleY(1) translateY(0);
-  opacity: 1;
-  height: auto;
-}
-
-.menu-dropdown:hover {
-  text-decoration: underline;
-}
-
-.arrow {
-  display: inline-block;
-  margin-left: 6px;
-  transition: transform 0.2s;
-}
-
-.arrow.down {
-  transform: rotate(90deg);
-}
 
 .content {
     padding: 2rem;
     background-color: var(--bg-color);
     color: var(--font-color);
 }
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-}
-.nav-links li {
-    display: inline;
-    padding: 0.3rem 0;
-    /* margin-right: 15px; */
-}
-.nav-links a {
-    color: var(--nav-font-color);
-    text-decoration: none;
-}
-.nav-links a:hover {
-    text-decoration: underline;
-}
-.nav-footer {
-    margin-top: auto;
-    padding: 10px 0;
-    border-top: 1px solid #444;
-}
+
 .content {
     padding: 20px;
+    width: 100%;
+    transition: all 0.3s ease; 
 }
 
-/* Toggle Switch CSS */
+/* Darkmode Toggle Switch CSS */
 
 .switch-container {
   display: flex;
@@ -216,139 +132,4 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* CALC CONTENT */
-    .calc-page {
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      width: 100vw;
-    }
-
-    .calc{
-      width: min(700px, 92vw);
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: clip;
-      border: 1px solid rgba(255,255,255,.06);
-    }
-
-    /* ---------- Display ---------- */
-    .display{
-      padding: 18px 18px 10px;
-      display: grid;
-      gap: 8px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.06));
-    }
-    .display .mini{
-      min-height: 22px;
-      color: var(--muted);
-      text-align: right;
-      font-size: 0.95rem;
-      letter-spacing: .4px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .display .main{
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-      line-height: 1.1;
-      font-size: clamp(1.8rem, 4.2vw + 1rem, 3rem);
-      word-break: break-all;
-      min-height: 48px;
-    }
-
-    /* ---------- Keypad ---------- */
-    .keys{
-      padding: 14px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    button.key{
-      appearance: none;
-      height: 100px;
-      width: 100%;
-      border: 0;
-      border-radius: 14px;
-      padding: 16px 12px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      cursor: pointer;
-      box-shadow:
-        0 1px 0 rgba(255,255,255,.04) inset,
-        0 8px 16px rgba(0,0,0,.18);
-      transform: translateY(0);
-      transition: transform .06s ease, box-shadow .2s ease, background .2s ease, opacity .2s ease;
-      user-select: none;
-    }
-    button.key:active{
-      transform: translateY(1px);
-      box-shadow:
-        0 0 0 rgba(255,255,255,0) inset,
-        0 4px 10px rgba(0,0,0,.18);
-    }
-    button.key:focus-visible{
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
-    }
-
-    /* Muted utility keys */
-    .key.muted{
-      color: var(--muted);
-    }
-
-    /* Operator keys */
-    .key.op{
-      background: linear-gradient(180deg, rgba(91,155,255,.18), rgba(91,155,255,.10));
-    }
-    .key.op:active{ background: linear-gradient(180deg, rgba(91,155,255,.24), rgba(91,155,255,.12)); }
-
-    /* Accent actions (equals) */
-    .key.equals{
-      background: linear-gradient(180deg, var(--primary), var(--primary-press));
-      color: white;
-      box-shadow:
-        0 1px 0 rgba(255,255,255,.18) inset,
-        0 10px 20px rgba(59,126,242,.35);
-    }
-
-    /* Danger (clear) */
-    .key.danger{
-      background: linear-gradient(180deg, rgba(255,107,107,.18), rgba(255,107,107,.10));
-      color: #ffdfe0;
-    }
-
-    /* Make 0 key wider; = key tall */
-    .key.span-2{ grid-column: span 2; }
-    .key.span-2-tall{ grid-row: span 2; }
-
-    /* Footer / credits (optional) */
-
-    /* CALC HISTORY */
-    .calc-history {
-      padding: 12px 18px;
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(0,0,0,.06));
-      width: 100%;
-    }
-    .calc-history h3 {
-      margin: 0 0 8px;
-      font-size: 1.8rem;
-      font-weight: 600;
-      width: 100%;
-    }
-    .calc-history ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .calc-history li {
-      padding: 4px 0;
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
 

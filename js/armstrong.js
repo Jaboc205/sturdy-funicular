@@ -83,6 +83,8 @@ list.innerHTML = "";
     list.innerHTML += `The range between ${numStart} and ${numEnd} is too large :( please pick a range within 10000000)...`;
   } else if (numStart > numEnd) {
     list.innerHTML += `${numStart} is bigger than ${numEnd}, please ensure the starting number is smaller than the ending number...`;
+  } else {
+    list.innerHTML = "Please enter a number in both boxes above";
   }
   
 }

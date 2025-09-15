@@ -1,8 +1,8 @@
 :root {
   --bg-color: #212121;
   --font-color: white;
-  --nav-bg-color: #1e1e2f;
-  --nav-font-color: white;
+  --content-button-color: #1e1e2f;
+  --content-button-border-color: #1e1e2f;
 }
 
 body {
@@ -12,13 +12,21 @@ body {
     height: 100vh;
     width: 100%;
     background-color: var(--bg-color);
-    color: var(--font-color)
+    color: var(--font-color);
+    transition: all 0.3s ease; 
 }
 
 body.dark-mode {
   --bg-color: white;
   --font-color: black;
+  --nav-bg-color: #767dce;
+  --nav-font-color: white;
+  --nav-border-color: #767dce;
+  --nav-active-color: #5e63be;
+  --content-button-color: #5e63be;
+  --content-button-border-color: #5e63be;
 }
+
 
 button, input[type="submit"], input[type="reset"] {
     background: none;
@@ -33,76 +41,8 @@ button, input[type="submit"], input[type="reset"] {
 .container {
     display: flex;
     height: 100%;
-}
-.sidebar {
-    width: 20vh;
-    min-width: 20vh;
-    background-color: var(--nav-bg-color);
-    color: var(--nav-font-color);
-    border: 2px solid #444;  
-    border-radius: 12px; 
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-}
-
-.nav-header h1 {
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.sidebar a {
-    display: block;
-    margin: 0.5rem 0;
-}
-
-.nav-links a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.menu-dropdown {
-    /* color: white; */
-    display: block;
-    /* margin: 0.5rem 0; */
-}
-
-.submenu {
-  padding-inline-start: 20px;
-  transform: scaleY(0);
-  transform-origin: top;
-  opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
-  height: 0;
-  overflow: hidden;
-}
-
-.submenu li a {
-display: block;
-
-}
-
-.submenu.show {
-  margin-bottom: 10%;
-  padding-inline-start: 20px;
-  transform: scaleY(1) translateY(0);
-  opacity: 1;
-  height: auto;
-}
-
-.menu-dropdown:hover {
-  text-decoration: underline;
-}
-
-.arrow {
-  display: inline-block;
-  margin-left: 6px;
-  transition: transform 0.2s;
-}
-
-.arrow.down {
-  transform: rotate(90deg);
+    width: 100%;
+    transition: all 0.3s ease; 
 }
 
 .content {
@@ -110,30 +50,7 @@ display: block;
     background-color: var(--bg-color);
     color: var(--font-color);
 }
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-}
-.nav-links li {
-    display: inline;
-    padding: 0.3rem 0;
-    /* margin-right: 15px; */
-}
-.nav-links a {
-    color: var(--nav-font-color);
-    text-decoration: none;
-}
-.nav-links a:hover {
-    text-decoration: underline;
-}
-.nav-footer {
-    margin-top: auto;
-    padding: 10px 0;
-    border-top: 1px solid #444;
-}
-.content {
-    padding: 20px;
-}
+
 
 /* Toggle Switch CSS */
 
@@ -222,12 +139,13 @@ input:checked + .slider:before {
 /* Armstrong */
 .content {
   width: 100%;
+  transition: all 0.3s ease; 
 }
 
 .toolBtn {
-  background-color: #1e1e2f;       /* Deep dark background */
+  background-color: var(--content-button-color);       /* Deep dark background */
   color: #f0f0f0;                  /* Light text */
-  border: 2px solid #444;          /* Subtle border for depth */
+  border: 2px solid var(--content-button-border-color);          /* Subtle border for depth */
   border-radius: 12px;              /* Rounded corners */
   padding: 10px 24px; 
   margin-right: 5px;              /* Comfortable spacing */
@@ -276,6 +194,3 @@ input:checked + .slider:before {
   opacity: 1;
   height: auto;
 }
-
-
-
