@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="../css/armstrong.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <script src="js/script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+
+      <div class="nav-header">
+        <h1>Theoretical</h1>
+        <h1>Hobbyist</h1>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <!-- Dropdown -->
+        <li>
+          <button class="menu-dropdown" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
+            Beginner Projects <span id="arrow1" class="arrow">▸</span>
+          </button>
+          <ul class="submenu show" id="beginner-dropdown">
+            <li><a href="calc.html">Calculator</a></li>
+            <li><a class="active" href="armstrong.html">Armstrong Numbers</a></li>
+            <li><a href="stopwatch.html">Stopwatch</a></li>
+          </ul>
+        </li>
+        <li>
+          <button class="menu-dropdown" onclick="toggleDropdown('intermediate-dropdown', 'arrow2')">
+            Intermediate Projects <span id="arrow2" class="arrow">▸</span>
+          </button>
+          <ul class="submenu" id="intermediate-dropdown">
+            <li><a href="#">Coming Soon</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Content 03</a></li>
+        <li><a href="#">Content 04</a></li>
+      </ul>
+
+      <div class="nav-footer">
+        <div class="switch-container">
+          <label class="switch">
+            <input id="dark-mode-toggle" type="checkbox" onclick="toggleDarkMode()">
+            <span class="slider round"></span>
+          </label>
+          <span id ="switch-label" class="switch-label">:)</span>
+        </div>
+      </div>
+
+    </nav>
+    <main class="content">
+      <button class="toolBtn" onclick="displayNumberChecker()">Armstrong Number Checker</button>
+      <button class="toolBtn" onclick="displayNumberGenerator()">Armstrong Number Generator</button>
+      <div class="numberChecker" id="numberChecker">
+        <h1>Armstrong Number Checker</h1>
+        <p>Enter a number in the form below, and I will tell you if it is or is not an armstrong number.</p>
+        <form>
+          <label for="num">Enter a number</label>
+          <input type="number" id="num" name="num"><br><br>
+          <output name="sum" id ="sum" for="num"></output>
+        </form>
+      </div>
+      <div class="numberGenerator" id="numberGenerator">
+        <h1>Armstrong Number Generator</h1>
+        <p>Enter a number range in the form below, and I will tell you what numbers in that range are armstrong numbers.</p>
+        <form>
+          <label for="num1">Starting number</label>
+          <input type="number" id="num1" name="num1"><br><br>
+          <label for="num2">Ending number</label>
+          <input type="number" id="num2" name="num2"><br><br>
+          <button class="toolBtn" type="button" id="generatorSubmit" onclick="generateArmstrongList()">Generate</button><br><br>
+          <ul name="List" id ="generatorList" for="num2 & num2">
+            
+          </ul>
+        </form>
+      </div>
+    </main>
+  </div>   
+  <script src="js/armstrong.js"></script> 
+</body>
+</html>
