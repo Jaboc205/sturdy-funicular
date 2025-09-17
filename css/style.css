@@ -37,16 +37,46 @@ button, input[type="submit"], input[type="reset"] {
     height: 100%;
 }
 
-.content {
-    padding: 2rem;
-    background-color: var(--bg-color);
-    color: var(--font-color);
-}
 
-.content {
+
+/* .content {
     padding: 20px;
     width: 100%;
     transition: all 0.3s ease; 
+} */
+
+/* General buttons */
+.toolBtn {
+  background-color: var(--content-button-color);       /* Deep dark background */
+  color: #f0f0f0;                  /* Light text */
+  border: 2px solid var(--content-button-border-color);          /* Subtle border for depth */
+  border-radius: 12px;              /* Rounded corners */
+  padding: 10px 24px; 
+  margin-right: 5px;              /* Comfortable spacing */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Slight shadow for depth */
+  transition: all 0.3s ease;       /* Smooth hover and press effects */
+}
+
+/* Hover effect */
+.toolBtn:hover {
+  background-color: #2a2a3f;       /* Slightly lighter */
+  border-color: #666;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+/* Press effect */
+.toolBtn:active {
+  transform: scale(0.97);          /* Tiny press animation */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* Optional focus outline for accessibility */
+.toolBtn:focus {
+  outline: 2px solid #888;
+  outline-offset: 2px;
 }
 
 
