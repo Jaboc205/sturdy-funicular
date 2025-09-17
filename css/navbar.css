@@ -2,6 +2,7 @@
   --nav-bg-color: #1e1e2f;
   --nav-font-color: white;
   --nav-border-color: #444;
+  --nav-line-color: #444;
 }
 
 body.dark-mode {
@@ -9,6 +10,7 @@ body.dark-mode {
   --nav-font-color: white;
   --nav-border-color: #767dce;
   --nav-active-color: #5e63be;
+  --nav-line-color: white;
 }
 
 .sidebar {
@@ -16,34 +18,34 @@ body.dark-mode {
     min-width: 25vh;
     background-color: var(--nav-bg-color);
     color: var(--nav-font-color);
-    border: 2px solid var(--nav-border-color);  
-    border-radius: 12px; 
+    border: 0.3vh solid var(--nav-border-color);  
+    border-radius: 1vh 1.5vh 1.5vh 1vh; 
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    transition: all 0.3s ease; 
+    padding: 2%;
+    transition: background-color 0.3s ease, 
+                color 0.3s ease, 
+                border-color 0.3s ease;
 }
 
 .nav-header h1 {
   padding: 0;
   margin: 0;
   text-align: center;
+  font-size: 4vh;
 }
 
-.sidebar a {
+/* .sidebar a {
     display: block;
     margin: 0.5rem 0;
-}
+    font-size: 2vh;
+} */
 
-.nav-links a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
+
 
 .menu-dropdown {
-    /* color: white; */
     display: block;
-    /* margin: 0.5rem 0; */
+    font-size: 2vh;
 }
 
 .submenu {
@@ -51,22 +53,22 @@ body.dark-mode {
   transform: scaleY(0);
   transform-origin: top;
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease, height 0.3s ease;
-  height: 0;
+  transition: max-height 0.8s ease, opacity 1.8s ease;
+  max-height: 0vh;
   overflow: hidden;
 }
 
 .submenu li a {
 display: block;
-
 }
 
+
 .submenu.show {
-  margin-bottom: 10%;
-  padding-inline-start: 20px;
+  /* margin-bottom: 10%; */
+  padding-inline-start: 1.2vh;
   transform: scaleY(1) translateY(0);
   opacity: 1;
-  height: auto;
+  max-height: 20vh;
 }
 
 .menu-dropdown:hover {
@@ -75,7 +77,7 @@ display: block;
 
 .arrow {
   display: inline-block;
-  margin-left: 6px;
+  margin-left: .5vh;
   transition: transform 0.2s;
 }
 
@@ -86,21 +88,127 @@ display: block;
 .nav-links {
     list-style-type: none;
     padding: 0;
+    margin: 1.5vh 0;
+    /* max-height: 500px; */
 }
 .nav-links li {
-    display: inline;
-    padding: 0.3rem 0;
+    display: block;
+    padding: 0.3vh 0;
     /* margin-right: 15px; */
 }
-.nav-links a {
-    color: var(--nav-font-color);
-    text-decoration: none;
-}
-.nav-links a:hover {
+
+.nav-links a.active {
+    font-weight: bold;
     text-decoration: underline;
 }
+
+/* Reset links and buttons inside nav-links */
+.nav-links a,
+.nav-links button {
+  all: unset;              
+  display: block;          /* consistent clickable area */
+  margin: 1vh 0;           /* spacing defined here */
+  font-size: 2vh;
+  line-height: 2.2vh;      /* keeps click area consistent */
+  color: var(--nav-font-color);
+  cursor: pointer;
+}
+
+/* Add back hover/focus states after reset */
+.nav-links a:hover,
+.nav-links button:hover {
+  text-decoration: underline;
+}
+/* .nav-links a:focus,
+.nav-links button:focus {
+  outline: 2px solid var(--nav-line-color);
+  outline-offset: 2px;
+} */
+
 .nav-footer {
     margin-top: auto;
-    padding: 10px 0;
-    border-top: 1px solid #444;
+    padding: 2vh 0 0 0;
+    border-top: 0.3vh solid var(--nav-line-color);
+}
+
+/* Darkmode Toggle Switch CSS */
+
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 1vh; /* space between toggle and text */
+}
+
+.switch-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 1vh;
+  font-size: 3vh;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  width: 6.5vh;
+  height: 3.7vh;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider track */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+
+  /* Only animate background-color on toggle */
+  transition: background-color 0.4s;
+}
+
+/* The circle knob */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 2.82vh;
+  width: 2.82vh;
+  left: .44vh;
+  bottom: .44vh;
+  background-color: white;
+
+  /* Only animate transform (the glide) */
+  transition: transform 0.4s, background-color 0.4s;
+}
+
+/* When checked, slide knob across */
+input:checked + .slider:before {
+  transform: translateX(2.8vh);
+  /* background-color: #2196F3; */
+}
+
+/* Optional hover effect still works */
+.slider:hover:before {
+  background-color: #303030;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2196F3;
 }
