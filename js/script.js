@@ -1,13 +1,31 @@
 // will come back to this
 
-// Document Functions
+// Navbar Functions
 function toggleDropdown(menuId, arrowId) {
-      const menu = document.getElementById(menuId);
-      const arrow = document.getElementById(arrowId);
+  const menu = document.getElementById(menuId);
+  const arrow = document.getElementById(arrowId);
 
-      menu.classList.toggle("show");
-      arrow.classList.toggle("down");
-    }
+  menu.classList.toggle("show");
+  arrow.classList.toggle("down");
+}
+
+document.querySelectorAll(".menu-trigger").forEach(btn => {
+  btn.addEventListener("click", () => {
+    
+    // close all open menus
+    document.querySelectorAll(".open").forEach(openMenu => {
+      openMenu.classList.remove("open")
+    })
+
+    // Toggle the clicked menu
+    btn.parentElement.classList.toggle("open");
+  });
+  console.log("trigger")
+});
+
+// function toggleNavFlyoutMenu() {
+
+// }
 
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
@@ -26,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     switchLabel.innerHTML = ":(";
   }
 
-  // --- Toggle function ---
+  // --- Toggle Darkmode function ---
   window.toggleDarkMode = function() {
     body.classList.toggle("dark-mode");
 

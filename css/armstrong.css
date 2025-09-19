@@ -32,8 +32,6 @@ body.dark-mode {
   color: var(--font-color);
 }
 
-
-
 .numberChecker,
 .numberGenerator {
   transform: scaleY(0);

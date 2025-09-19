@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/newUINav.css">
+  <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
   <div class="container">
@@ -20,27 +20,30 @@
         </div>  
       </div>
       <ul class="nav-links">
-        <li><a class="active" href="index.html">Home</a></li>
-        <!-- Dropdown -->
-        <li>
-          <button class="menu-dropdown" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
-            Beginner Projects <span id="arrow1" class="arrow">▸</span>
+        <li><a class="active" href="../index.html">Home</a></li>
+        <!-- Flyout Menu -->
+        <li class="nav-item">
+          <button class="menu-trigger">
+            Beginner Projects
           </button>
-          <ul class="submenu" id="beginner-dropdown">
-            <li><a href="subpages/calc.html">Calculator</a></li>
-            <li><a href="subpages/armstrong.html">Armstrong Numbers</a></li>
-            <li><a href="subpages/stopwatch.html">Stopwatch</a></li>
-          </ul>
+          <div class="flyout-menu" id="beginner-projects">
+            <h3>Beginner Projects</h3>
+            <a href="calc.html">Calculator</a>
+            <a href="armstrong.html">Armstrong Numbers</a>
+            <a href="stopwatch.html">Stopwatch</a>
+          </div>
         </li>
-        <li>
-          <button class="menu-dropdown" onclick="toggleDropdown('intermediate-dropdown', 'arrow2')">
-            Intermediate Projects <span id="arrow2" class="arrow">▸</span>
+        <li class="nav-item">
+          <button class="menu-trigger">
+            Intermediate Projects
           </button>
-          <ul class="submenu" id="intermediate-dropdown">
-            <li><a href="#">Coming Soon</a></li>
-          </ul>
+          <div class="flyout-menu" id="intermediate-projects">
+            <h3>Intermediate Projects</h3>
+            <a href="#">Coming Soon..</a>
+            <a href="#">Coming Soon..</a>
+            <a href="#">Coming Soon..</a>
+          </div>
         </li>
-        <li><a href="subpages/newUI.html">New Card Menu</a></li>
       </ul>
 
       <div class="nav-footer">
@@ -63,6 +66,6 @@
     <!-- Page content end -->
   </div>
   <!-- Page Scripts Here -->    
-   <script src="js/script.js"></script>
+   <script src="../js/script.js"></script>
 </body>
 </html>

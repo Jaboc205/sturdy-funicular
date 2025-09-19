@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #212121;
+  --bg-color: #2a2544;
   --font-color: white;
   --content-button-color: #1e1e2f;
   --content-button-border-color: #1e1e2f;
@@ -16,7 +16,7 @@ body {
 }
 
 body.dark-mode {
-  --bg-color: white;
+  --bg-color: d7d9d6;
   --font-color: black;
   --content-button-color: #5e63be;
   --content-button-border-color: #5e63be;
