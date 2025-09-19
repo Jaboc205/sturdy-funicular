@@ -3,14 +3,11 @@ let startTime = 0;
 let elapsed = 0;
 let timerInterval;
 
-
 function toggleStopwatch() {
   if (onState) {
     stopwatchStop();
-    
   } else {
     stopwatchStart();
-
   }
   onState = !onState;
 }
