@@ -59,11 +59,18 @@
         <h1>Stopwatch</h1>
       </div>
       <div class="stopwatch-content">
-        <output id="timer">00:00.00</output>
-        <div class="Stopwatch-buttons">
+        <output class="timer" id="timer">00:00.00</output>
+        <div class="stopwatch-buttons">
+          <button class="aux-button" id="lap-button" onclick="lap()">Lap</button>
           <button class="stopwatch-go-button" id="stopwatch-go-button" onclick="toggleStopwatch()">Start</button>
-          <button class="reset-button" id="reset-button" onclick="reset()">Reset</button>
+          <button class="aux-button" id="reset-button" onclick="reset()">Reset</button>
         </div>
+        <output class="laps" id="laps">
+          <ul id="active-lap">
+          </ul>
+          <ul id="laps-list">
+          </ul>
+        </output>
       </div>
     </main>
     <!-- Page content end -->
