@@ -12,8 +12,9 @@ Month 1 – Foundations (HTML, CSS, JS basics) - September 2025
 
   Side Quests (optional projects):
 
+✅ Update to a modern static UI
 🔳 Calculator (DOM manipulation + events).
-🔳 Stopwatch / digital clock (practice setInterval).
+✅ Stopwatch / digital clock (practice setInterval).
 🔳 Random quote generator (arrays + randomness).
 
 
@@ -21,11 +22,12 @@ Month 2 – DOM & Interactivity - October 2025
 
   Main Quest:
 🔳 Add interactivity: forms, inputs, event listeners.
-🔳 Style your UI → experiment with dark mode toggle (store choice in localStorage).
+🔳 Experiment with dark mode toggle (store choice in localStorage).
 🔳 Make sure your layout is responsive (basic flexbox/grid).
 
   Side Quests:
 
+🔳 Make UI responsive and mobile friendly
 🔳 Notes app (simple text + localStorage).
 🔳 Theme customizer (change font size, background, save settings).
 🔳 Simple budget tracker (add/remove items, sum totals, persist in storage).
@@ -39,6 +41,7 @@ Main Quest:
 🔳 Learn basic UI best practices: spacing, alignment, readability.
 
 Side Quests:
+🔳 To-Do list app (priority matrix)
 🔳 Weather widget (fetch data from API).
 🔳 Unit converter (C↔F, km↔miles).
 🔳 Keyboard shortcuts for your site (/ = focus search bar, etc.).

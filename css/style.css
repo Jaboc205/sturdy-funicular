@@ -1,8 +1,9 @@
 :root {
   --bg-color: #edf6f7;
   --font-color: #202935;
-  --content-button-color: #1e1e2f;
-  --content-button-border-color: #1e1e2f;
+  --content-btn-bg: #7cd1eb;
+  --content-btn-font: #202935;
+  /* --content-button-border-color: #1e1e2f; */
 }
 
 body {
@@ -12,7 +13,7 @@ body {
     height: 100vh;
     width: 100%;
     background-color: var(--bg-color);
-    color: var(--font-color)
+    /* color: var(--font-color) */
 }
 
 /* body.dark-mode {
@@ -39,30 +40,29 @@ button, input[type="submit"], input[type="reset"] {
 
 /* General buttons */
 .toolBtn {
-  background-color: var(--content-button-color);       /* Deep dark background */
-  color: #f0f0f0;                  /* Light text */
-  border: 2px solid var(--content-button-border-color);          /* Subtle border for depth */
-  border-radius: 12px;              /* Rounded corners */
+  background-color: var(--nav-btn-active-bg);
+  color: var(--nav-font-active);
+  border-radius: 12px;
   padding: 10px 24px; 
-  margin-right: 5px;              /* Comfortable spacing */
-  font-size: 16px;
+  margin-right: 5px;
+  font-family: "Segoe UI"; 
+  font-size: 16px; 
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Slight shadow for depth */
-  transition: all 0.3s ease;       /* Smooth hover and press effects */
+  transition: all 0.1s ease;
 }
 
 /* Hover effect */
 .toolBtn:hover {
-  background-color: #2a2a3f;       /* Slightly lighter */
-  border-color: #666;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  background-color: var(--nav-btn-hover);
+  color: var(--nav-font-hover);
+  /* box-shadow: 0 6px 12px rgba(0,0,0,0.4); */
 }
 
 /* Press effect */
 .toolBtn:active {
   transform: scale(0.97);          /* Tiny press animation */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.3); */
 }
 
 

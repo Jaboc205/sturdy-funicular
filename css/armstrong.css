@@ -1,10 +1,10 @@
 /* Armstrong */
 .content {
+  background-color: var(--nav-bg);
+  margin: 20px;
+  padding: 20px;
+  border-radius: 1.5vh;
   width: 100%;
-  transition: all 0.3s ease; 
-  padding: 2rem;
-  background-color: var(--bg-color);
-  color: var(--font-color);
 }
 
 .numberChecker,

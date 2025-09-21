@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/navbar.css">
-  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/quote-generator.css">
+  <link rel="stylesheet" href="../css/navbar.css">
   <script src="https://kit.fontawesome.com/d5b7ef678a.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
 
-    <!-- Expanded Navigation Bar Start -->
+      <!-- Expanded Navigation Bar Start -->
     <nav class="sidebar expanded">
       <div class="nav-header">
         <i class="fa-solid fa-gears"></i>
@@ -20,23 +20,23 @@
       </div>
       <ul class="nav-links">
         <li class="nav-main-links">
-          <a class="main-link active" href="index.html">
+          <a class="main-link" href="../index.html">
             <i class="fa-solid fa-house-chimney"></i> 
             Home
           </a>
         </li>
         <li class="nav-main-links">
-          <button class="menu-dropdown" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
+          <button class="menu-dropdown active" onclick="toggleDropdown('beginner-dropdown', 'arrow1')">
             <i class="fa-regular fa-circle"></i>
             Beginner Projects 
             <span class="spacer"></span>
-            <span id="arrow1" class="arrow"><i class="fa-solid fa-chevron-up fa-lg"></i></span>
+            <span id="arrow1" class="arrow down"><i class="fa-solid fa-chevron-up fa-lg menu-icon"></i></span>
           </button>
-          <ul class="submenu" id="beginner-dropdown">
-            <li class="submenu-top"><a href="beginnerprojects/calc.html">Calculator</a></li>
-            <li class="submenu-lower"><a href="beginnerprojects/armstrong.html">Armstrong Numbers</a></li>
-            <li class="submenu-lower"><a href="beginnerprojects/stopwatch.html">Stopwatch</a></li>
-            <li class="submenu-lower"><a href="beginnerprojects/quote-generator.html">Quote Generator</a></li>
+          <ul class="submenu show" id="beginner-dropdown">
+            <li class="submenu-top"><a href="calc.html">Calculator</a></li>
+            <li class="submenu-lower"><a href="armstrong.html">Armstrong Numbers</a></li>
+            <li class="submenu-lower"><a href="stopwatch.html">Stopwatch</a></li>
+            <li class="submenu-lower"><a class="active" href="quote-generator.html">Quote Generator</a></li>
           </ul>
         </li>
         <li class="nav-main-links">
@@ -56,12 +56,16 @@
 
     <!-- Page content start -->
     <main class="content">
-      <h2>Welcome to the Theoretical Hobbyist!</h2>
-      <p>No, I don't know what I'm doing, but I'm having a good time doing it.</p>
+      <div>
+        <button class="toolBtn" onclick="generateQuote()">Generate Random Quote</button>
+        <p>"There is nothing more permanent than a temporary solution"</p>
+        <p>- John Fitzgerald Kennedy</p>
+      </div>
     </main>
     <!-- Page content end -->
   </div>
-  <!-- Page Scripts Here -->    
-   <script src="js/script.js"></script>
+  <!-- Page Scripts Here -->  
+  <script src="../js/script.js"></script>   
+  <script src="../js/armstrong.js"></script> 
 </body>
 </html>
