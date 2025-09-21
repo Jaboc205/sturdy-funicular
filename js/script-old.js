@@ -7,7 +7,21 @@ function toggleDropdown(menuId, arrowId) {
 
   menu.classList.toggle("show");
   arrow.classList.toggle("down");
-};
+}
+
+document.querySelectorAll(".menu-trigger").forEach(btn => {
+  btn.addEventListener("click", () => {
+    
+    // close all open menus
+    document.querySelectorAll(".open").forEach(openMenu => {
+      openMenu.classList.remove("open")
+    })
+
+    // Toggle the clicked menu
+    btn.parentElement.classList.toggle("open");
+  });
+  console.log("trigger")
+});
 
 // function toggleNavFlyoutMenu() {
 
@@ -35,11 +49,11 @@ function toggleDropdown(menuId, arrowId) {
 //     body.classList.toggle("dark-mode");
 
 //     if (checkbox.checked) {
-//       switchLabel.innerHTML = ":)";
-//       localStorage.setItem("theme", "light");
-//     } else {
 //       switchLabel.innerHTML = ":(";
 //       localStorage.setItem("theme", "dark");
+//     } else {
+//       switchLabel.innerHTML = ":)";
+//       localStorage.setItem("theme", "light");
 //     }
 //   };
 // });

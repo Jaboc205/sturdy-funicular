@@ -1,63 +1,139 @@
-:root {
-  --nav-bg-color: #1e1e2f;
-  --nav-font-color: white;
-  --nav-border-color: #444;
-  --nav-line-color: #444;
+/* Light mode colors */
+:root { 
+  --nav-bg: #ffffff;
+  --nav-font: #67737f;
+  --nav-font-hover: #202935;
+  --nav-font-active: #005278;
+  --nav-header: #233141;
+  --nav-line-color: #dbe6e8;
+  --nav-btn-active-bg: #e2f3f9;
+  --nav-btn-hover: #edf6f7;
 }
 
-body.dark-mode {
-  --nav-bg-color: #767dce;
+/* body.dark-mode {
+  --nav-bg-color: #221e36;
   --nav-font-color: white;
-  --nav-border-color: #767dce;
-  --nav-active-color: #5e63be;
-  --nav-line-color: white;
-}
+  --nav-line-color: #4a29bb;
+  --nav-btn-color: #4a29bb;
+  --nav-btn-active: #5931e1;
+  --nav-btn-dropshadow: rgba(0, 0, 0, 0.15);
+} */
 
-.sidebar {
-    width: 25vh;
-    min-width: 25vh;
-    background-color: var(--nav-bg-color);
-    color: var(--nav-font-color);
-    border: 0.3vh solid var(--nav-border-color);  
-    border-radius: 1vh 1.5vh 1.5vh 1vh; 
+
+/* expanded nav CSS Start*/
+.sidebar.expanded{
+    width: 13.5vw;
+    min-width: 13.5vw;
+    background-color: var(--nav-bg);
+    color: var(--nav-font);
+    border-radius: 0 1.5vh 1.5vh 0; 
     display: flex;
     flex-direction: column;
-    padding: 2%;
+    padding: 2.5vh 0.65vw;
     transition: background-color 0.3s ease, 
                 color 0.3s ease, 
                 border-color 0.3s ease;
 }
 
+/* Title/logo CSS START*/
 .nav-header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  color: var(--nav-header);
+}
+
+.nav-header i {
+  font-size: 3vh;
+  margin-right: 0.5vh;
 }
 
 .nav-header h1 {
-  
   padding: 0;
   margin: 0;
-  font-size: 4vh;
+  font-size: 2vh;
+  font-family: "Segoe UI"; 
+}
+/* Title/logo CSS END*/
+
+
+
+/* SUBMENU START */
+/* Top level UL */
+
+.nav-links{
+    list-style-type: none;
+    text-decoration: none;
+    padding: 0;
+    margin-block-start: 3vh;
+    margin-block-end: 0;
 }
 
-.lower-title {
+/* Nav top level links and buttons */
+.nav-main-links li{
   display: flex;
   flex-direction: row;
-  align-items:baseline;
-}
-.lower-title p {
-  font-size: 2vh;;
 }
 
-.menu-dropdown {
-    display: block;
-    font-size: 2vh;
+/* .spacer {
+  display: inline-block;
+  align-items: end;
+} */
+
+/* all links and buttons in nav */
+.nav-links i {
+  margin-right: 1vh;
 }
 
-/* Old submenu */
+.nav-links a,
+.nav-links button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+  background-color: var(--nav-bg);  
+  color: var(--nav-font);
+  font-family: "Segoe UI"; 
+  font-size: 1.8vh; 
+  font-weight: 500;
+  border: none;
+  border-radius: 1vh;
+  text-decoration: none;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+/* ::active */
+.nav-links a.active,
+.nav-links button.active {
+  background-color: var(--nav-btn-active-bg);
+  color: var(--nav-font-active);
+}
+
+/* Add back hover/focus states after reset */
+.nav-links a:hover,
+.nav-links button:hover {
+  background-color: var(--nav-btn-hover);
+  color: var(--nav-font-hover);
+}
+
+/* main links and all buttons in nav */
+.nav-links a.main-link {
+  padding: 1vh 1vh;
+  margin: 1.2vh 0 0 0;
+}
+
+.nav-links button {
+  padding: 1vh 1vh;
+  margin: 1.2vh 0 0 0;
+}
+
+
+/* SUBMENU START */
+
+/* default hidden */
 .submenu {
-  padding-inline-start: 20px;
   transform: scaleY(0);
   transform-origin: top;
   opacity: 0;
@@ -66,98 +142,74 @@ body.dark-mode {
   overflow: hidden;
 }
 
-.submenu li a {
-display: block;
+/* DISPLAY SUBMENU STARTS */
+/* submenu links in nav */
+.submenu.show a {
+  padding: 1vh 1vh;
+  margin: 0.4vh 0;
 }
 
+/* default show */
 .submenu.show {
-  padding-inline-start: 1.2vh;
+  margin-top: 1vh;
+  padding-inline-start: 2vh;
   transform: scaleY(1) translateY(0);
   opacity: 1;
   max-height: 20vh;
 }
 
-.menu-dropdown:hover {
-  text-decoration: underline;
+/* submenu curvelines */
+.submenu.show li {
+  position: relative;
+  padding-left: 1vw; /* make space for the curve */
+}
+
+.submenu.show li::before {
+  content: "";
+  position: absolute;
+  left: 0.2vw;
+  width: 0.5vw;
+  border-left: 0.32vh solid #666;
+  border-bottom: 0.32vh solid #666;
+  border-radius: 0 0 0 0.6rem;
+  border-color: var(--nav-line-color);
+}
+
+.submenu.show li.submenu-lower::before {
+  height: 6vh;
+  top: -3.4vh;
+}
+
+.submenu.show li.submenu-top::before {
+  height: 2vh;
+  top: 0.6vh;
+}
+/* submenu curvelines end*/
+
+/* TOGGLE ARROW */
+.spacer {
+  display: flex;
+  width: 100%;
 }
 
 .arrow {
-  display: inline-block;
-  margin-left: .5vh;
+  display: flex;
+  align-items: end;
   transition: transform 0.2s;
+  font-size: 0.8vh;
+  text-shadow: 0 0 1px #000; /* Adds thickness */
+  /* align-items: flex-end; */
 }
 
 .arrow.down {
-  transform: rotate(90deg);
-}
-/* Old submenu end */
+  transform: rotate(180deg);
+} */
 
-/* New Flyout Menu */
-.nav-item {
-  position: relative;
-}
 
-.flyout-menu {
-  position: absolute;
-  top: 0;
-  left: 114%;
-  background: #333;
-  color: white;
-  padding: 2vh 8vh 2vh 2vh;
-  border-radius: 1.5vh;
-  white-space: nowrap;
-  width: auto;
-  /* min-width: 20vh; */
-  display: none;
-}
 
-.nav-item.open .flyout-menu {
-  display: block;
-}
+/* DISPLAY SUBMENU ENDS */
+/* SUBMENU ENDS */
 
-.flyout-menu h3 {
-  margin: 0 0 2vh 0;
-}
-
-.flyout-menu a {
-  /* margin: 0.5vh 0; */
-  padding: 1vh ; 
-}
-/* New Flyout Menu end */
-
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 1.5vh 0;
-}
-.nav-links li {
-    display: block;
-    padding: 0.3vh 0;
-    position: relative;
-}
-
-.nav-links a.active {
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-/* Reset links and buttons inside nav-links */
-.nav-links a,
-.nav-links button {
-  all: unset;              
-  display: block;
-  margin: 1vh 0;
-  font-size: 2vh;
-  line-height: 2.2vh;
-  color: var(--nav-font-color);
-  cursor: pointer;
-}
-
-/* Add back hover/focus states after reset */
-.nav-links a:hover,
-.nav-links button:hover {
-  text-decoration: underline;
-}
 
 .nav-footer {
     margin-top: auto;
@@ -165,84 +217,3 @@ display: block;
     border-top: 0.3vh solid var(--nav-line-color);
 }
 
-/* Darkmode Toggle Switch CSS */
-
-.switch-container {
-  display: flex;
-  align-items: center;
-  gap: 1vh; /* space between toggle and text */
-}
-
-.switch-label {
-  display: inline-block;
-  vertical-align: middle;
-  margin-left: 1vh;
-  font-size: 3vh;
-}
-
-/* The switch - the box around the slider */
-.switch {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 6.5vh;
-  height: 3.7vh;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* The slider track */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-
-  /* Only animate background-color on toggle */
-  transition: background-color 0.4s;
-}
-
-/* The circle knob */
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 2.82vh;
-  width: 2.82vh;
-  left: .44vh;
-  bottom: .44vh;
-  background-color: white;
-
-  /* Only animate transform (the glide) */
-  transition: transform 0.4s, background-color 0.4s;
-}
-
-/* When checked, slide knob across */
-input:checked + .slider:before {
-  transform: translateX(2.8vh);
-  /* background-color: #2196F3; */
-}
-
-/* Optional hover effect still works */
-.slider:hover:before {
-  background-color: #303030;
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-input:checked + .slider {
-  background-color: #2196F3;
-}
