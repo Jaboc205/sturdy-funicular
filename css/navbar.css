@@ -23,7 +23,7 @@
 /* expanded nav CSS Start*/
 .sidebar.expanded{
     width: 13.5vw;
-    min-width: 13.5vw;
+    min-width: 220px;
     background-color: var(--nav-bg);
     color: var(--nav-font);
     border-radius: 0 1.5vh 1.5vh 0; 
@@ -85,6 +85,10 @@
   margin-right: 1vh;
 }
 
+.nav-links i.fa-chevron-up {
+  margin: 0;
+}
+
 .nav-links a,
 .nav-links button {
   all: unset;
@@ -116,6 +120,11 @@
 .nav-links button:hover {
   background-color: var(--nav-btn-hover);
   color: var(--nav-font-hover);
+}
+
+.nav-links a:active,
+.nav-links button:active {
+  transform: scale(0.97);
 }
 
 /* main links and all buttons in nav */
@@ -155,7 +164,7 @@
   padding-inline-start: 2vh;
   transform: scaleY(1) translateY(0);
   opacity: 1;
-  max-height: 20vh;
+  max-height: 40vh;
 }
 
 /* submenu curvelines */
