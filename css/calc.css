@@ -1,9 +1,4 @@
 /* CALC CONTENT */
-    .content {
-    padding: 2rem;
-    background-color: var(--bg-color);
-    color: var(--font-color);
-}
 
     .calc-page {
       display: flex;

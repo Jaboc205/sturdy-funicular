@@ -16,3 +16,9 @@ cd into the correct folder
 
 4. Push the branch to github
   1. git push -u origin <branch> eg main or feature/<featureName>
+
+
+If you want to update a branch eg. UIUpdates with the main code in order to add to it in another branch:
+  1. git checkout <branch you wish to overwrite>
+  2. git reset --hard main
+  3. git push origin <branch you wish to overwrite> --force

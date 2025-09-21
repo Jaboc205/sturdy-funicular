@@ -1,6 +1,6 @@
 :root {
-  --bg-color: #212121;
-  --font-color: white;
+  --bg-color: #edf6f7;
+  --font-color: #202935;
   --content-button-color: #1e1e2f;
   --content-button-border-color: #1e1e2f;
 }
@@ -15,12 +15,12 @@ body {
     color: var(--font-color)
 }
 
-body.dark-mode {
-  --bg-color: white;
+/* body.dark-mode {
+  --bg-color: #d7d9d6;
   --font-color: black;
   --content-button-color: #5e63be;
   --content-button-border-color: #5e63be;
-}
+} */
 
 button, input[type="submit"], input[type="reset"] {
     background: none;
