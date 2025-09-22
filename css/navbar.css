@@ -29,6 +29,7 @@
     border-radius: 0 1.5vh 1.5vh 0; 
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding: 2.5vh 0.65vw;
     transition: background-color 0.3s ease, 
                 color 0.3s ease, 
@@ -62,11 +63,12 @@
 /* Top level UL */
 
 .nav-links{
-    list-style-type: none;
-    text-decoration: none;
-    padding: 0;
-    margin-block-start: 3vh;
-    margin-block-end: 0;
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin-block-start: 3vh;
+  margin-block-end: 0;
+  margin-bottom: auto;
 }
 
 /* Nav top level links and buttons */
@@ -81,16 +83,19 @@
 } */
 
 /* all links and buttons in nav */
-.nav-links i {
+.nav-links i,
+.nav-footer i {
   margin-right: 1vh;
 }
 
-.nav-links i.fa-chevron-up {
+.nav-links i.fa-chevron-up,
+.nav-footer i.fa-chevron-up {
   margin: 0;
 }
 
 .nav-links a,
-.nav-links button {
+.nav-links button,
+.nav-footer button {
   all: unset;
   display: flex;
   align-items: center;
@@ -110,34 +115,33 @@
 
 /* ::active */
 .nav-links a.active,
-.nav-links button.active {
+.nav-links button.active,
+.nav-footer button.active {
   background-color: var(--nav-btn-active-bg);
   color: var(--nav-font-active);
 }
 
 /* Add back hover/focus states after reset */
 .nav-links a:hover,
-.nav-links button:hover {
+.nav-links button:hover,
+.nav-footer button:hover {
   background-color: var(--nav-btn-hover);
   color: var(--nav-font-hover);
 }
 
 .nav-links a:active,
-.nav-links button:active {
+.nav-links button:active,
+.nav-footer button:active {
   transform: scale(0.97);
 }
 
 /* main links and all buttons in nav */
-.nav-links a.main-link {
+.nav-links a.main-link,
+.nav-links button,
+.nav-footer button {
   padding: 1vh 1vh;
   margin: 1.2vh 0 0 0;
 }
-
-.nav-links button {
-  padding: 1vh 1vh;
-  margin: 1.2vh 0 0 0;
-}
-
 
 /* SUBMENU START */
 
@@ -212,17 +216,52 @@
 
 .arrow.down {
   transform: rotate(180deg);
-} */
-
-
-
+} 
 /* DISPLAY SUBMENU ENDS */
 /* SUBMENU ENDS */
 
-
 .nav-footer {
-    margin-top: auto;
-    padding: 2vh 0 0 0;
-    border-top: 0.3vh solid var(--nav-line-color);
+  display: flex;
+  /* justify-content: flex-end; */
+  padding: 1vh; 
+}
+
+.settings-menu {
+  display: flex;             /* keep it in the DOM */
+  flex-direction: column;
+  transform: scaleX(0);
+  transform-origin: left;
+  position: absolute;
+  bottom: 4.7vh;
+  left: 31vh;
+  width: 13.5vw;
+  min-width: 220px;
+  color: var(--nav-font);
+  border-width: 10px;
+  border-radius: 1.5vh; 
+  padding: 2.5vh 0.65vw;
+  box-shadow: .01vw .01vh 1vh .011vh var(--nav-font-active);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, max-height 0.3s ease;
+}
+
+
+
+.settings-menu.show {
+  transform: scaleX(1);
+  opacity: 1;
+  max-height: 100vh;
+}
+
+.settings-menu h3 {
+  margin: 0;
+}
+
+.settings-menu ul {
+  list-style: none;
+  margin: 0;
+  padding-inline-start: 0;
 }
 

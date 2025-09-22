@@ -9,6 +9,16 @@ function toggleDropdown(menuId, arrowId) {
   arrow.classList.toggle("down");
 };
 
+function toggleSettings(menuId, arrowId, buttonId) {
+  const menu = document.getElementById(menuId);
+  const arrow = document.getElementById(arrowId);
+  const button = document.getElementById(buttonId);
+
+  menu.classList.toggle("show");
+  arrow.classList.toggle("down");
+  button.classList.toggle("active");
+}
+
 // function toggleNavFlyoutMenu() {
 
 // }

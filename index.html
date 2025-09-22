@@ -33,8 +33,7 @@
             <span id="arrow1" class="arrow"><i class="fa-solid fa-chevron-up fa-lg"></i></span>
           </button>
           <ul class="submenu" id="beginner-dropdown">
-            <li class="submenu-top"><a href="beginnerprojects/calc.html">Calculator</a></li>
-            <li class="submenu-lower"><a href="beginnerprojects/armstrong.html">Armstrong Numbers</a></li>
+            <li class="submenu-top"><a href="beginnerprojects/armstrong.html">Armstrong Numbers</a></li>
             <li class="submenu-lower"><a href="beginnerprojects/stopwatch.html">Stopwatch</a></li>
             <li class="submenu-lower"><a href="beginnerprojects/quote-generator.html">Quote Generator</a></li>
           </ul>
@@ -51,6 +50,21 @@
           </ul>
         </li>
       </ul>
+      <div class="nav-footer">
+        <button class="menu-dropdown" id="settings-button" onclick="toggleSettings('settings-menu', 'arrow-setting', 'settings-button')">
+          <i class="fa-solid fa-gear settings"></i>
+          Settings
+          <span class="spacer"></span>
+          <span id="arrow-setting" class="arrow"><i class="fa-solid fa-chevron-up fa-lg"></i></span>
+        </button>
+        <div class="settings-menu" id="settings-menu">
+          <h3>Settings</h3>
+          <ul>
+            <li>Darkmode</li>
+            <li>Theme</li>
+          </ul>
+        </div>
+      </div>
     </nav>
     <!-- Expanded Navigation Bar End -->
 
