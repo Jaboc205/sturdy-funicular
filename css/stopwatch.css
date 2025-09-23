@@ -1,8 +1,10 @@
 .content {
   background-color: var(--nav-bg);
-  margin: 20px;
-  padding: 20px;
-  border-radius: 1.5vh;
+  color: var(--nav-font);
+  margin: 2vh;
+  padding: 2vh;
+  /* border-radius: 1.5vh; */
+  border-radius: 0.8em;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -35,7 +37,7 @@
 }
 
 .stopwatch-go-button {
-  background-color: var(--content-button-color);
+  background-color: var(--content-btn-bg);
   color: #f0f0f0; 
   border-radius: 12px;
   margin: 0 18px;
@@ -43,7 +45,6 @@
   font-size: 40px;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: all 0.3s ease;    
 }
 
@@ -51,13 +52,11 @@
 .stopwatch-go-button.stop:hover {
   background-color: rgb(177, 51, 51);       /* Slightly lighter */
   border-color: #666;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
 .stopwatch-go-button:hover {
-  background-color: #2a2a3f;       /* Slightly lighter */
+  background-color: var(--nav-btn-hover);       /* Slightly lighter */
   border-color: #666;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
 .stopwatch-go-button.stop {
@@ -74,20 +73,17 @@
   font-size: 40px;
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   transition: all 0.3s ease;   
 }
 
 /* Press effect */
 .aux-button:active {
   transform: scale(0.97);          /* Tiny press animation */
-  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
 }
 
 .aux-button:hover {
   background-color: rgb(255, 195, 85);       /* Slightly lighter */
   border-color: #666;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
 
 .aux-button.max-laps {

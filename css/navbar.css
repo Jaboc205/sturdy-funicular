@@ -1,36 +1,19 @@
-/* Light mode colors */
-:root { 
-  --nav-bg: #ffffff;
-  --nav-font: #67737f;
-  --nav-font-hover: #202935;
-  --nav-font-active: #005278;
-  --nav-header: #233141;
-  --nav-line-color: #dbe6e8;
-  --nav-btn-active-bg: #e2f3f9;
-  --nav-btn-hover: #edf6f7;
-}
 
-/* body.dark-mode {
-  --nav-bg-color: #221e36;
-  --nav-font-color: white;
-  --nav-line-color: #4a29bb;
-  --nav-btn-color: #4a29bb;
-  --nav-btn-active: #5931e1;
-  --nav-btn-dropshadow: rgba(0, 0, 0, 0.15);
-} */
 
 
 /* expanded nav CSS Start*/
 .sidebar.expanded{
-    width: 13.5vw;
-    min-width: 220px;
+    width: 20em;
+    min-width: 15em;
+    max-width: 30em;
     background-color: var(--nav-bg);
     color: var(--nav-font);
     border-radius: 0 1.5vh 1.5vh 0; 
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2.5vh 0.65vw;
+    /* padding: 2.5vh 0.65vw; */
+    padding: 1.5em 0.65em 0.65em 0.65em;
     transition: background-color 0.3s ease, 
                 color 0.3s ease, 
                 border-color 0.3s ease;
@@ -45,14 +28,14 @@
 }
 
 .nav-header i {
-  font-size: 3vh;
-  margin-right: 0.5vh;
+  font-size: 1.6em;
+  margin-right: 0.5em;
 }
 
 .nav-header h1 {
   padding: 0;
   margin: 0;
-  font-size: 2vh;
+  font-size: 1.2em;
   font-family: "Segoe UI"; 
 }
 /* Title/logo CSS END*/
@@ -66,7 +49,8 @@
   list-style-type: none;
   text-decoration: none;
   padding: 0;
-  margin-block-start: 3vh;
+  /* margin-block-start: 3vh; */
+  margin-block-start: 1.8em;
   margin-block-end: 0;
   margin-bottom: auto;
 }
@@ -85,7 +69,8 @@
 /* all links and buttons in nav */
 .nav-links i,
 .nav-footer i {
-  margin-right: 1vh;
+  /* margin-right: 1vh; */
+  margin-right: 0.6em;
 }
 
 .nav-links i.fa-chevron-up,
@@ -104,7 +89,8 @@
   background-color: var(--nav-bg);  
   color: var(--nav-font);
   font-family: "Segoe UI"; 
-  font-size: 1.8vh; 
+  /* font-size: 1.8vh; */
+  font-size: 1.05em; 
   font-weight: 500;
   border: none;
   border-radius: 1vh;
@@ -139,8 +125,10 @@
 .nav-links a.main-link,
 .nav-links button,
 .nav-footer button {
-  padding: 1vh 1vh;
+  /* padding: 1vh 1vh; */
+  padding: 0.6em 0.6em;
   margin: 1.2vh 0 0 0;
+  /* margin: 0.6em 0 0 0; */
 }
 
 /* SUBMENU START */
@@ -158,44 +146,54 @@
 /* DISPLAY SUBMENU STARTS */
 /* submenu links in nav */
 .submenu.show a {
-  padding: 1vh 1vh;
-  margin: 0.4vh 0;
+  /* padding: 1vh 1vh; */
+  padding: 0.6em 0.6vh;
+  /* margin: 0.4vh 0; */
+  margin: 0.2em 0;
 }
 
 /* default show */
 .submenu.show {
-  margin-top: 1vh;
-  padding-inline-start: 2vh;
+  /* margin-top: 1vh; */
+  margin-top: 0.6em;
+  /* padding-inline-start: 2vh; */
+  padding-inline-start: 0.8em;
   transform: scaleY(1) translateY(0);
   opacity: 1;
-  max-height: 40vh;
+  max-height: 40em;
 }
 
 /* submenu curvelines */
 .submenu.show li {
   position: relative;
-  padding-left: 1vw; /* make space for the curve */
+  /* padding-left: 1vw;  */
+  padding-left: 1.3em;
 }
 
 .submenu.show li::before {
   content: "";
   position: absolute;
-  left: 0.2vw;
-  width: 0.5vw;
-  border-left: 0.32vh solid #666;
-  border-bottom: 0.32vh solid #666;
+  /* left: 0.2vw; */
+  left: 0.2em;
+  /* width: 0.5vw; */
+  width: 0.6em;
+  /* border-left: 0.32vh solid #666; */
+  border-left: 0.14em solid #666;
+  border-bottom: 0.14em solid #666;
   border-radius: 0 0 0 0.6rem;
   border-color: var(--nav-line-color);
 }
 
-.submenu.show li.submenu-lower::before {
-  height: 6vh;
-  top: -3.4vh;
+.submenu.show li.submenu-top::before {
+  /* height: 2vh; */
+  height: 1.2em;
+  /* top: 0.6vh; */
+  top: 0.3em;
 }
 
-.submenu.show li.submenu-top::before {
-  height: 2vh;
-  top: 0.6vh;
+.submenu.show li.submenu-lower::before {
+  height: 4em;
+  top: -2.5em;
 }
 /* submenu curvelines end*/
 
@@ -209,8 +207,8 @@
   display: flex;
   align-items: end;
   transition: transform 0.2s;
-  font-size: 0.8vh;
-  text-shadow: 0 0 1px #000; /* Adds thickness */
+  font-size: 0.6em;
+  text-shadow: 0 0 .1em #000; /* Adds thickness */
   /* align-items: flex-end; */
 }
 
@@ -220,48 +218,95 @@
 /* DISPLAY SUBMENU ENDS */
 /* SUBMENU ENDS */
 
+
+/* Settings at the nav footer */
 .nav-footer {
   display: flex;
-  /* justify-content: flex-end; */
   padding: 1vh; 
 }
 
+.settings-overlay.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
 .settings-menu {
-  display: flex;             /* keep it in the DOM */
+  background-color: var(--nav-bg);
+  display: flex;
   flex-direction: column;
-  transform: scaleX(0);
-  transform-origin: left;
   position: absolute;
-  bottom: 4.7vh;
-  left: 31vh;
   width: 13.5vw;
   min-width: 220px;
   color: var(--nav-font);
   border-width: 10px;
   border-radius: 1.5vh; 
-  padding: 2.5vh 0.65vw;
-  box-shadow: .01vw .01vh 1vh .011vh var(--nav-font-active);
+  padding: 1vh 2.5vh 2vh 2.5vh;
+  /* box-shadow: .01vw .01vh 1vh .011vh var(--nav-font-active); */
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: transform 0.3s ease, opacity 0.3s ease, max-height 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s ease-in-out;
 }
 
-
-
 .settings-menu.show {
-  transform: scaleX(1);
   opacity: 1;
   max-height: 100vh;
+  z-index: 0;
 }
 
 .settings-menu h3 {
-  margin: 0;
+  font-size: 4vh;
+  margin: 0 0 2vh 0;
 }
 
-.settings-menu ul {
-  list-style: none;
-  margin: 0;
-  padding-inline-start: 0;
+.settings-menu form {
+  display: flex;
+  flex-direction: column;
 }
 
+.form-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-menu label {
+  font-size: 1.8vh; 
+  font-weight: 500;
+}
+
+.settings-menu input.settings-save {
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 1vh 1vh;
+  width: 100%;
+  background-color: var(--nav-bg);  
+  color: var(--nav-font);
+  font-family: "Segoe UI"; 
+  font-size: 1.8vh; 
+  font-weight: 500;
+  border: none;
+  border-radius: 1vh;
+  text-decoration: none;
+  /* text-align: left; */
+  box-sizing: border-box;
+}
+
+.settings-menu input.settings-save:hover {
+  background-color: var(--nav-btn-hover);
+  color: var(--nav-font-hover);
+}
+
+.settings-menu input.settings-save:active {
+    transform: scale(0.97);
+}

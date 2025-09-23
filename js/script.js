@@ -9,50 +9,51 @@ function toggleDropdown(menuId, arrowId) {
   arrow.classList.toggle("down");
 };
 
-function toggleSettings(menuId, arrowId, buttonId) {
-  const menu = document.getElementById(menuId);
+function toggleSettings(overlayId, arrowId, menuId) {
+  const overlay = document.getElementById(overlayId);
   const arrow = document.getElementById(arrowId);
-  const button = document.getElementById(buttonId);
+  const menu = document.getElementById(menuId);
 
+  overlay.classList.toggle("show");
   menu.classList.toggle("show");
   arrow.classList.toggle("down");
-  button.classList.toggle("active");
 }
 
-// function toggleNavFlyoutMenu() {
+// Settings form
+const settingsForm = document.getElementById("settings-form");
 
-// }
+settingsForm.onsubmit = (event) => {
+  // event.preventDefault(); // stop the page from reloading
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const body = document.body;
-//   const checkbox = document.getElementById('dark-mode-toggle');
-//   const switchLabel = document.getElementById('switch-label');
+  // get form values
+  const darkModeEnabled = document.getElementById("darkmode").checked;
+  const testEnabled = document.getElementById("test").checked;
 
-//   // --- On load, apply stored theme ---
-//   const storedTheme = localStorage.getItem("theme");
-//   if (storedTheme === "dark") {
-//     body.classList.add("dark-mode");
-//     checkbox.checked = true;
-//     switchLabel.innerHTML = ":)";
-//   } else {
-//     body.classList.remove("dark-mode");
-//     checkbox.checked = false;
-//     switchLabel.innerHTML = ":(";
-//   }
+  // save to local storage
+  localStorage.setItem("darkmode" , darkModeEnabled);
+  localStorage.setItem("test" , testEnabled);
+}
 
-//   // --- Toggle Darkmode function ---
-//   window.toggleDarkMode = function() {
-//     body.classList.toggle("dark-mode");
+document.addEventListener("DOMContentLoaded", () => {
 
-//     if (checkbox.checked) {
-//       switchLabel.innerHTML = ":)";
-//       localStorage.setItem("theme", "light");
-//     } else {
-//       switchLabel.innerHTML = ":(";
-//       localStorage.setItem("theme", "dark");
-//     }
-//   };
-// });
+  // when the dom is loaded, apply the stored dark/light theme from local storage
+  const darkEnabled = localStorage.getItem("darkmode");
+  const testEnabled = localStorage.getItem("test");
+
+  if (darkEnabled == "true") {
+    document.body.classList.add("darkmode")
+    document.getElementById("darkmode").checked = true;
+  } else {
+    document.body.classList.remove("darkmode")
+  }
+
+  if (testEnabled == "true") {
+    document.body.classList.add("test")
+    document.getElementById("test").checked = true;
+  } // add else field for an actal non test function
+  
+});
+
 
 
 

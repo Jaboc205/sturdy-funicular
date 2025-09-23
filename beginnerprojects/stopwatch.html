@@ -50,6 +50,30 @@
           </ul>
         </li>
       </ul>
+      <div class="nav-footer">
+        <button class="menu-dropdown" id="settings-button" onclick="toggleSettings('settings-overlay', 'arrow-setting', 'settings-menu')">
+          <i class="fa-solid fa-gear settings"></i>
+          Settings
+          <span class="spacer"></span>
+          <span id="arrow-setting" class="arrow"><i class="fa-solid fa-chevron-up fa-lg"></i></span>
+        </button>
+        <div class="settings-overlay" id="settings-overlay">
+          <div class="settings-menu" id="settings-menu">
+            <h3>Settings</h3>
+            <form class="settings-form" id="settings-form">
+              <div class="form-row">
+                <label for="darkmode">Enable Dark Mode</label>
+                <input type="checkbox" id="darkmode" name="darkmode" value="darkmode-on">
+              </div>
+              <div class="form-row">
+                <label for="test">Test Item</label>
+                <input type="checkbox" id="test" name="test" value="test-on">
+              </div>
+              <input class="settings-save" type="submit" value="Save">
+            </form>
+          </div>
+        </div>
+      </div>
     </nav>
     <!-- Expanded Navigation Bar End -->
 

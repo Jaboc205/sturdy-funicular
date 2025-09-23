@@ -1,6 +1,7 @@
 /* Armstrong */
 .content {
   background-color: var(--nav-bg);
+  color: var(--nav-font);
   margin: 20px;
   padding: 20px;
   border-radius: 1.5vh;
