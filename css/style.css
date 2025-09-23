@@ -1,18 +1,45 @@
-:root {
-  --bg-color: #edf6f7;
-  --font-color: #202935;
+/* Light mode colors */
+:root { 
+  --nav-bg: #ffffff;
+  --nav-font: #67737f;
+  --nav-header: #233141;
+  --nav-line-color: #dbe6e8;
+  --nav-btn-active-bg: #e2f3f9;
+  --nav-font-active: #005278;
+  --nav-btn-hover: #edf6f7;
+  --nav-font-hover: #202935;
+  
+  /* content */
   --content-btn-bg: #7cd1eb;
   --content-btn-font: #202935;
-  /* --content-button-border-color: #1e1e2f; */
+  --frame-bg: #edf6f7;
 }
 
+/* Dark mode colors */
+body.darkmode {
+  --nav-bg: #233141;
+  --nav-font: #ffffff;
+  --nav-header: #ffffff;
+  --nav-line-color: #dbe6e8;
+  --nav-btn-active-bg: #005278;
+  --nav-font-active: #ffffff;
+  --nav-btn-hover: #67737f;
+  --nav-font-hover: #ffffff;
+
+  /* content */
+  --content-btn-bg: #005278;
+  --content-btn-font: #ffffff;
+  --frame-bg: #67737f;
+}
+
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI";
     margin: 0;
     padding: 0;
     height: 100vh;
     width: 100%;
-    background-color: var(--bg-color);
+    background-color: var(--frame-bg);
     /* color: var(--font-color) */
 }
 

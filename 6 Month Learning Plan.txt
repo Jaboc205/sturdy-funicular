@@ -13,9 +13,8 @@ Month 1 – Foundations (HTML, CSS, JS basics) - September 2025
   Side Quests (optional projects):
 
 ✅ Update to a modern static UI
-🔳 Calculator (DOM manipulation + events).
 ✅ Stopwatch / digital clock (practice setInterval).
-🔳 Random quote generator (arrays + randomness).
+✅ Random quote generator (arrays + randomness).
 
 
 Month 2 – DOM & Interactivity - October 2025

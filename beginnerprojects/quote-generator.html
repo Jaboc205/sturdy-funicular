@@ -33,8 +33,7 @@
             <span id="arrow1" class="arrow down"><i class="fa-solid fa-chevron-up fa-lg menu-icon"></i></span>
           </button>
           <ul class="submenu show" id="beginner-dropdown">
-            <li class="submenu-top"><a href="calc.html">Calculator</a></li>
-            <li class="submenu-lower"><a href="armstrong.html">Armstrong Numbers</a></li>
+            <li class="submenu-top"><a href="armstrong.html">Armstrong Numbers</a></li>
             <li class="submenu-lower"><a href="stopwatch.html">Stopwatch</a></li>
             <li class="submenu-lower"><a class="active" href="quote-generator.html">Quote Generator</a></li>
           </ul>
@@ -51,21 +50,48 @@
           </ul>
         </li>
       </ul>
+      <div class="nav-footer">
+        <button class="menu-dropdown" id="settings-button" onclick="toggleSettings('settings-overlay', 'arrow-setting', 'settings-menu')">
+          <i class="fa-solid fa-gear settings"></i>
+          Settings
+          <span class="spacer"></span>
+          <span id="arrow-setting" class="arrow"><i class="fa-solid fa-chevron-up fa-lg"></i></span>
+        </button>
+        <div class="settings-overlay" id="settings-overlay">
+          <div class="settings-menu" id="settings-menu">
+            <h3>Settings</h3>
+            <form class="settings-form" id="settings-form">
+              <div class="form-row">
+                <label for="darkmode">Enable Dark Mode</label>
+                <input type="checkbox" id="darkmode" name="darkmode" value="darkmode-on">
+              </div>
+              <div class="form-row">
+                <label for="test">Test Item</label>
+                <input type="checkbox" id="test" name="test" value="test-on">
+              </div>
+              <input class="settings-save" type="submit" value="Save">
+            </form>
+          </div>
+        </div>
+      </div>
     </nav>
     <!-- Expanded Navigation Bar End -->
 
     <!-- Page content start -->
     <main class="content">
-      <div>
-        <button class="toolBtn" onclick="generateQuote()">Generate Random Quote</button>
-        <p>"There is nothing more permanent than a temporary solution"</p>
-        <p>- John Fitzgerald Kennedy</p>
+      <div class="button-tray">
+        <button class="toolBtn" id="quote-btn" onclick="generateQuote()">Generate Random Quote</button>
+
+      </div>
+      <div class="quote-tray" id="quote-tray">
+        <p class="quote" id="quote"></p>
+        <p class="author" id="author"></p>
       </div>
     </main>
     <!-- Page content end -->
   </div>
   <!-- Page Scripts Here -->  
   <script src="../js/script.js"></script>   
-  <script src="../js/armstrong.js"></script> 
+  <script src="../js/quote-generator.js"></script> 
 </body>
 </html>
