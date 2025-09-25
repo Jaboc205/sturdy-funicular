@@ -1,0 +1,149 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  /* background-color: var(--nav-bg); */
+  color: var(--nav-font);
+  margin: 1vh;
+  /* padding: 2vh; */
+  border-radius: 1.5vh;
+  width: 100%;
+}
+
+.tray {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--nav-bg);
+  color: var(--nav-font);
+  margin: 1vh;
+  padding: 2vh;
+  border-radius: 1.5vh;  
+}
+
+.notes-nav {
+  width: 20em;
+  min-width: 250px;
+}
+
+.notepad-list li {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Add new notepad menu */
+.notepad-overlay.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.notepad-menu {
+  background-color: var(--nav-bg);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 13.5vw;
+  min-width: 220px;
+  color: var(--nav-font);
+  border-width: 10px;
+  border-radius: 1.5vh; 
+  padding: 1vh 2.5vh 2vh 2.5vh;
+  /* box-shadow: .01vw .01vh 1vh .011vh var(--nav-font-active); */
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease-in-out;
+}
+
+.notepad-menu.show {
+  opacity: 1;
+  max-height: 100vh;
+  z-index: 0;
+}
+
+.notepad-menu h3 {
+  font-size: 4vh;
+  margin: 0 0 2vh 0;
+}
+
+.notepad-menu form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.notepad-menu label,
+.notepad-menu span {
+  font-size: 1.8vh; 
+  font-weight: 500;
+}
+
+.notepad-menu input.notepad-btn {
+  margin-top: 2vh;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  padding: 1vh 1vh;
+  width: 100%;
+  background-color: var(--nav-bg);  
+  color: var(--nav-font);
+  font-family: "Segoe UI"; 
+  font-size: 1.8vh; 
+  font-weight: 500;
+  border: none;
+  border-radius: 1vh;
+  text-decoration: none;
+  /* text-align: left; */
+  box-sizing: border-box;
+}
+
+.notepad-menu input.notepad-btn:hover {
+  background-color: var(--nav-btn-hover);
+  color: var(--nav-font-hover);
+}
+
+.notepad-menu input.notepad-btn:active {
+    transform: scale(0.97);
+}
+
+
+.notes-nav ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  align-items: left;
+}
+
+.notes-nav li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.notes-nav button.notepad-delete-btn {
+  opacity: 0;
+}
+
+.notes-nav button.notepad-delete-btn:hover {
+  opacity: 1;
+}
+
+
+
+/* Notes nav ends */
+
+
+.notes-content {
+  width: 100%;
+}
+
