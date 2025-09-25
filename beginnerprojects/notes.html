@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quote Generator</title>
+  <title>Notepad</title>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/quote-generator.css">
+  <link rel="stylesheet" href="../css/notes.css">
   <link rel="stylesheet" href="../css/navbar.css">
   <script src="https://kit.fontawesome.com/d5b7ef678a.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="container">
 
-      <!-- Expanded Navigation Bar Start -->
+    <!-- Expanded Navigation Bar Start -->
     <nav class="sidebar expanded">
       <div class="nav-header">
         <i class="fa-solid fa-gears"></i>
@@ -35,8 +35,8 @@
           <ul class="submenu show" id="beginner-dropdown">
             <li class="submenu-top"><a href="armstrong.html">Armstrong Numbers</a></li>
             <li class="submenu-lower"><a href="stopwatch.html">Stopwatch</a></li>
-            <li class="submenu-lower"><a class="active" href="quote-generator.html">Quote Generator</a></li>
-            <li class="submenu-lower"><a href="notes.html">Notepad</a></li>
+            <li class="submenu-lower"><a href="quote-generator.html">Quote Generator</a></li>
+            <li class="submenu-lower"><a class="active" href="notes.html">Notepad</a></li>
           </ul>
         </li>
         <li class="nav-main-links">
@@ -80,19 +80,46 @@
 
     <!-- Page content start -->
     <main class="content">
-      <div class="button-tray">
-        <button class="toolBtn" id="quote-btn" onclick="generateQuote()">Generate Random Quote</button>
-
+      <div class="notes-nav tray">
+        <!-- <button class="toolBtn" id="quote-btn" onclick="generateQuote()">Generate Random Quote</button> -->
+          <h3>My Notepads</h3>
+        <ul id="notepad-list">
+        </ul>
+        <button class="toolBtn" id="new-note-btn" onclick='toggleNotepadMenu("new-notepad-overlay", "new-notepad-menu")'><span>Start New NotePad <i class="fa-solid fa-pen-to-square"></i></span></button>
+        <div class="notepad-overlay" id="new-notepad-overlay">
+          <div class="notepad-menu" id="new-notepad-menu">
+            <h3>New Notepad</h3>
+            <form class="notepad-form" id="new-notepad-form">
+              <div class="form-row">
+                <label for="notepad-name">Name your notepad</label>
+                <input type="text" id="notepad-name" name="notepad-name">
+              </div>
+              <input class="notepad-btn" type="submit" value="Save">
+            </form>
+          </div>
+        </div>
+        <div class="notepad-overlay" id="delete-notepad-overlay">
+          <div class="notepad-menu" id="delete-notepad-menu">
+            <h3>delete Notepad</h3>
+            <form class="notepad-form" id="delete-notepad-form">
+              <div class="form-row">
+                <label for="submit">Are you sure you want to delete?</label>
+              </div>
+              <input class="notepad-btn" type="submit" value="Delete">
+            </form>
+          </div>
+        </div>      
       </div>
-      <div class="quote-tray" id="quote-tray">
-        <p class="quote" id="quote"></p>
-        <p class="author" id="author"></p>
+      <div class="notes-content tray">
+        <ul>
+          <li><p class="note">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae in vero deserunt aliquid veniam sed error est obcaecati voluptatibus, natus impedit eos autem tenetur quam culpa rem minus, quod maiores.</p><button><i class="fa-solid fa-circle-xmark"></i></button></li>
+          <li><p class="note">other note</p></li>
+        </ul>
       </div>
-    </main>
     <!-- Page content end -->
   </div>
   <!-- Page Scripts Here -->  
   <script src="../js/script.js"></script>   
-  <script src="../js/quote-generator.js"></script> 
+  <script src="../js/notes.js"></script> 
 </body>
 </html>

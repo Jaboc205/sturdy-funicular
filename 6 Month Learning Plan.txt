@@ -21,7 +21,7 @@ Month 2 – DOM & Interactivity - October 2025
 
   Main Quest:
 🔳 Add interactivity: forms, inputs, event listeners.
-🔳 Experiment with dark mode toggle (store choice in localStorage).
+✅ Experiment with dark mode toggle (store choice in localStorage).
 🔳 Make sure your layout is responsive (basic flexbox/grid).
 
   Side Quests:
